@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <!-- Dark rounded background -->
+  <rect width="60" height="60" rx="13" fill="#0F172A"/>
+  <!-- J -->
+  <path d="M16 14h6v22c0 3.5-1.8 6-5.5 6C13 42 11 40 11 37h5c0 1.2 0.5 1.8 1.5 1.8 1.1 0 1.5-0.8 1.5-2.2V14z" fill="white"/>
+  <!-- T crossbar -->
+  <path d="M26 14h16v5H38v19h-6V19h-6V14z" fill="white"/>
+  <!-- Blue dot -->
+  <circle cx="48.5" cy="43" r="4" fill="#0066FF"/>
+</svg>

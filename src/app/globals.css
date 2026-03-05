@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #111111;
+
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  --font-display: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains);
+
+  /* Variant A: Gradient Flow palette */
+  --color-va-purple: #8B5CF6;
+  --color-va-blue: #3B82F6;
+  --color-va-pink: #EC4899;
+
+  /* Variant B: Card Grid palette */
+  --color-vb-teal: #0D9488;
+  --color-vb-orange: #F97316;
+  --color-vb-pink: #DB2777;
+
+  /* Variant C: Editorial palette */
+  --color-vc-accent: #0066FF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #111111;
+}
+
+/* Gradient text utility */
+.gradient-text-a {
+  background: linear-gradient(135deg, #8B5CF6, #3B82F6, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient blob */
+.blob {
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  position: absolute;
+  pointer-events: none;
+}
