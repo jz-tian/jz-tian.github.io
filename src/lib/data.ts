@@ -121,22 +121,12 @@ export const projects = {
   ],
   vibeCoding: [
     {
-      title: "Vibe Coding App #1",
+      title: "Trend Intelligence Dashboard",
       description:
-        "A web app prototype built with Claude Code. Describe what it does and what problem it solves.",
-      tags: ["Next.js", "Claude Code", "TypeScript", "Tailwind"],
+        "Full-stack keyword trend dashboard that surfaces Google Trends, news, YouTube results, sentiment analysis, and a word cloud from a single search. Uses pytrends, GDELT 2.1, and ytsr — no paid APIs. Features two themes (Bloomberg dark / Apple light) and a FastAPI Python sidecar for NLP.",
+      tags: ["Next.js", "FastAPI", "Python", "TypeScript", "Recharts", "Tailwind"],
       link: "#",
-      github: "#",
-      demoUrl: "",
-      image: "",
-    },
-    {
-      title: "Vibe Coding App #2",
-      description:
-        "Another rapid prototype built with AI-assisted coding. What idea did you want to test?",
-      tags: ["React", "Claude Code", "Vercel", "API"],
-      link: "#",
-      github: "#",
+      github: "https://github.com/jz-tian/keyword_dashboard",
       demoUrl: "",
       image: "",
     },
