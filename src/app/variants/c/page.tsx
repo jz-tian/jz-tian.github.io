@@ -619,117 +619,39 @@ function Photography({ t }: { t: T }) {
 }
 
 // ─── Contact ──────────────────────────────────────────────────────────────────
-function Contact({ t, lang }: { t: T; lang: Lang }) {
-  const contactCopy = lang === "de"
-    ? {
-      badge: "Direkter Kontakt",
-      title: "Am besten per E-Mail.",
-      email: "E-Mail schreiben",
-      linkedin: "Auf LinkedIn schreiben",
-      note: "Offen fuer spannende Rollen, App-Ideen und gute Gespraeche ueber Daten, Produkte und Fotografie.",
-      availabilityLabel: "Verfuegbar fuer",
-      availabilityValue: "Neue Projekte und Kontakte",
-      responseLabel: "Antwortzeit",
-      responseValue: "Normalerweise innerhalb weniger Tage",
-    }
-    : {
-      badge: "Direct Contact",
-      title: "Start with email.",
-      email: "Email Me",
-      linkedin: "Message on LinkedIn",
-      note: "Open to interesting roles, app ideas, and thoughtful conversations about data, products, and photography.",
-      availabilityLabel: "Available for",
-      availabilityValue: "New projects and conversations",
-      responseLabel: "Response time",
-      responseValue: "Usually within a few days",
-    };
-
+function Contact({ t }: { t: T }) {
   return (
     <section id="contact" className="py-24 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <SectionLabel num="05" label={t.contact.sectionLabel} />
         <SectionTitle>{t.contact.title}</SectionTitle>
 
-        <div className="grid items-start lg:grid-cols-12 gap-12 lg:gap-16">
-          <div className="lg:col-span-5">
-            <motion.p variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
-              className="text-gray-600 text-lg leading-relaxed mb-10">
+        <div className="mx-auto max-w-3xl">
+          <motion.p variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
+              className="text-center text-gray-600 text-lg leading-relaxed mb-10">
               {t.contact.intro}
-            </motion.p>
-            <div className="space-y-3">
-              {[
-                { href: `mailto:${personal.email}`, icon: <FiMail size={16} />, label: personal.email, sub: "Email" },
-                { href: personal.linkedin, icon: <FiLinkedin size={16} />, label: "Jiazheng Tian", sub: "LinkedIn" },
-                { href: personal.github, icon: <FiGithub size={16} />, label: "jz-tian", sub: "GitHub" },
-              ].map((item, i) => (
-                <motion.a key={item.label} variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} custom={i}
-                  href={item.href} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-xl border border-gray-100 bg-gray-50 hover:border-blue-100 hover:bg-blue-50/50 hover:shadow-sm transition-all duration-200 group">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-200 group-hover:bg-blue-100"
-                    style={{ background: ACCENT_LIGHT, color: ACCENT }}>
-                    {item.icon}
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-400 font-medium">{item.sub}</p>
-                    <p className="text-sm font-semibold text-gray-700 group-hover:text-gray-900">{item.label}</p>
-                  </div>
-                  <FiArrowUpRight className="ml-auto text-gray-300 group-hover:text-blue-500 transition-colors" size={16} />
-                </motion.a>
-              ))}
-            </div>
+          </motion.p>
+          <div className="grid gap-3 md:grid-cols-3">
+            {[
+              { href: `mailto:${personal.email}`, icon: <FiMail size={16} />, label: personal.email, sub: "Email" },
+              { href: personal.linkedin, icon: <FiLinkedin size={16} />, label: "Jiazheng Tian", sub: "LinkedIn" },
+              { href: personal.github, icon: <FiGithub size={16} />, label: "jz-tian", sub: "GitHub" },
+            ].map((item, i) => (
+              <motion.a key={item.label} variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} custom={i}
+                href={item.href} target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-xl border border-gray-100 bg-gray-50 hover:border-blue-100 hover:bg-blue-50/50 hover:shadow-sm transition-all duration-200 group min-h-[96px]">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-200 group-hover:bg-blue-100"
+                  style={{ background: ACCENT_LIGHT, color: ACCENT }}>
+                  {item.icon}
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs text-gray-400 font-medium">{item.sub}</p>
+                  <p className="text-sm font-semibold text-gray-700 group-hover:text-gray-900 break-words">{item.label}</p>
+                </div>
+                <FiArrowUpRight className="ml-auto text-gray-300 group-hover:text-blue-500 transition-colors" size={16} />
+              </motion.a>
+            ))}
           </div>
-
-          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
-            className="lg:col-span-6 lg:col-start-7 lg:-mt-16">
-            <div className="relative overflow-hidden rounded-[2rem] border border-gray-100 bg-white p-8 shadow-[0_20px_45px_rgba(15,23,42,0.06)]">
-              <div className="absolute inset-x-0 top-0 h-1.5" style={{ background: ACCENT }} />
-              <div className="absolute -right-8 -top-10 h-32 w-32 rounded-full opacity-70"
-                style={{ background: "radial-gradient(circle, rgba(0,102,255,0.14), transparent 68%)" }} />
-
-              <div className="relative inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/70 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.24em] text-blue-600">
-                <FiMail size={12} />
-                {contactCopy.badge}
-              </div>
-
-              <h3 className="relative mt-6 max-w-md text-[2rem] leading-tight font-black text-gray-900" style={{ fontFamily: TITLE_FONT }}>
-                {contactCopy.title}
-              </h3>
-
-              <p className="relative mt-4 max-w-xl text-base leading-relaxed text-gray-500">
-                {contactCopy.note}
-              </p>
-
-              <div className="relative mt-8 grid gap-3 sm:grid-cols-2">
-                <a
-                  href={`mailto:${personal.email}?subject=${encodeURIComponent("Hello Jiazheng")}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:opacity-90 hover:shadow-lg"
-                  style={{ background: ACCENT, boxShadow: `0 12px 30px ${ACCENT}25` }}
-                >
-                  {contactCopy.email} <FiArrowRight size={15} />
-                </a>
-                <a
-                  href={personal.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-5 py-3.5 text-sm font-semibold text-gray-700 transition-all duration-200 hover:border-gray-300 hover:shadow-sm"
-                >
-                  {contactCopy.linkedin} <FiArrowUpRight size={15} />
-                </a>
-              </div>
-
-              <div className="relative mt-8 grid gap-3 sm:grid-cols-2">
-                {[
-                  { label: contactCopy.availabilityLabel, value: contactCopy.availabilityValue },
-                  { label: contactCopy.responseLabel, value: contactCopy.responseValue },
-                ].map((item) => (
-                  <div key={item.label} className="rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-gray-400">{item.label}</p>
-                    <p className="mt-2 text-sm font-semibold leading-relaxed text-gray-700">{item.value}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
@@ -774,7 +696,7 @@ export default function VariantC() {
       <Journey t={t} />
       <Projects t={t} />
       <Photography t={t} />
-      <Contact t={t} lang={lang} />
+      <Contact t={t} />
       <Footer t={t} />
     </main>
   );

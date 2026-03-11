@@ -178,7 +178,7 @@ export const translations: Record<Lang, T> = {
     contact: {
       sectionLabel: "Contact",
       title: "Let's talk",
-      intro: "Have a project in mind, want to explore a collaboration, or just want to talk data and code? I'm always happy to connect.",
+      intro: "Have a project in mind, want to explore a collaboration, or just want to talk about data and code? I'm always happy to connect.",
       nameLabel: "Your name",
       namePlaceholder: "Jiazheng Tian",
       emailLabel: "Email address",
@@ -218,7 +218,7 @@ export const translations: Record<Lang, T> = {
       sectionLabel: "Über mich",
       title: "Ein bisschen über mich",
       paragraphs: [
-        "Ich arbeite als Data Analyst und Data Scientist mit einem Hintergrund in Informationssystemen an der Schnittstelle von maschinellem Lernen, Analytics und Business Intelligence. Bei Acxiom entwickle ich prädiktive Modelle und skalierbare Datenworkflows, die Kunden helfen, bessere Entscheidungen zu treffen und komplexe Datensaetze in praktischen Geschaeftswert zu uebersetzen.",
+        "Ich arbeite als Data Analyst und Data Scientist mit einem Hintergrund in Informationssystemen an der Schnittstelle von maschinellem Lernen, Analytics und Business Intelligence. Bei Acxiom entwickle ich prädiktive Modelle und skalierbare Datenworkflows, die Kunden helfen, bessere Entscheidungen zu treffen und komplexe Datensätze in praktischen Geschäftswert zu übersetzen.",
         "Besonders spannend finde ich derzeit Vibe Coding: den Einsatz von KI-Tools, um Ideen schnell in funktionierende Apps zu verwandeln. Mich reizt vor allem, Dinge pragmatisch zu bauen, schnell zu testen und sie durch Experimentieren Schritt für Schritt besser zu machen.",
         "Außerhalb der Arbeit interessiere ich mich für Fotografie, Sprachen und strategische Hobbys wie Tennis und Games. Diese Interessen prägen auch, wie ich Details wahrnehme, mich auf Neues einstelle und Probleme aus unterschiedlichen Perspektiven angehe.",
       ],
@@ -243,7 +243,7 @@ export const translations: Record<Lang, T> = {
         {
           title: "Data Scientist/Data Analyst",
           description:
-            "Ich entwickle prädiktive Modelle auf Basis von Kundendaten, darunter logistische Modelle fuer Adressselektionsstrategien, um Kampagnen-Targeting und Marketingwirkung zu verbessern. Mit SAS und Python liefere ich Kundenstrukturanalysen und Datenanreicherungs-Workflows, unterstuetze die Weiterentwicklung analytischer Workflows in Richtung PySpark-basierter Loesungen und uebersetze Ergebnisse in klare Empfehlungen fuer Kunden und interne Stakeholder.",
+            "Ich entwickle prädiktive Modelle auf Basis von Kundendaten, darunter logistische Modelle für Adressselektionsstrategien, um Kampagnen-Targeting und Marketingwirkung zu verbessern. Mit SAS und Python liefere ich Kundenstrukturanalysen und Datenanreicherungs-Workflows, unterstütze die Weiterentwicklung analytischer Workflows in Richtung PySpark-basierter Lösungen und übersetze Ergebnisse in klare Empfehlungen für Kunden und interne Stakeholder.",
         },
         {
           title: "Machine-Learning-Forschung — Masterarbeit",
