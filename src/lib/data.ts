@@ -133,7 +133,7 @@ export const projects = {
 };
 
 export const profilePhotos = {
-  hero: "/profile.jpg",
+  hero: "/profile/profile_hero.jpg",
   about: "/profile/profile_about.jpg",
 };
 
