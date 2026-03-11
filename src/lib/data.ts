@@ -59,7 +59,7 @@ export const workExperience = [
     period: "Feb 2022 – Present",
     location: "Munich, Germany",
     description:
-      "Build and deploy logistic regression models and address selection strategies that drive direct marketing campaigns for major enterprise clients. Conduct customer structure analyses and data enrichment using SAS and Python, turning raw data into clear business insights. Actively involved in the company-wide platform migration from SAS to PySpark, modernizing data workflows at scale. Also develop Python scripts for web scraping and market analysis, and present findings directly to clients.",
+      "Build and deploy predictive models and address selection strategies for enterprise marketing campaigns. Use SAS and Python for customer structure analysis and data enrichment, support the migration from SAS to PySpark, and develop scripts for web scraping, market analysis, and client-facing insights.",
   },
   {
     title: "Machine Learning Research — Master Thesis",
@@ -67,7 +67,7 @@ export const workExperience = [
     period: "Jun 2021 – Jan 2022",
     location: "Munich, Germany",
     description:
-      "Built an anomaly detection pipeline combining supervised and unsupervised ML algorithms to identify failure patterns in log data from CT scanner machines. Used SHAP values to explain model outputs and deliver actionable insights that helped the after-sales service team reduce unplanned equipment downtime.",
+      "Built an anomaly detection pipeline for CT scanner log data, combining supervised and unsupervised methods. Used SHAP-based explainability to turn model outputs into insights that supported predictive maintenance.",
   },
   {
     title: "Working Student — Data Science, Sales Operations",
@@ -75,7 +75,7 @@ export const workExperience = [
     period: "Nov 2019 – Dec 2021",
     location: "Munich, Germany",
     description:
-      "Maintained and enriched the CRM customer database and built data visualizations using NumPy, Pandas, and Seaborn. Produced regular dashboards that gave the sales team better visibility into pipeline performance and conversion trends.",
+      "Maintained and enriched CRM data, built visualizations with Python tools, and delivered dashboards that gave the sales team clearer visibility into pipeline performance and conversion trends.",
   },
 ];
 
@@ -86,7 +86,7 @@ export const education = [
     period: "Oct 2018 – Jan 2022",
     location: "Munich, Germany",
     description:
-      "Coursework in Deep Learning, Business Analytics, Natural Language Processing, and Database Systems. Thesis on ML-based anomaly detection, carried out in collaboration with Siemens AG on real-world industrial data.",
+      "Focused on machine learning, business analytics, and database systems, with a thesis on industrial anomaly detection completed in collaboration with Siemens.",
   },
   {
     degree: "B.Sc. Information Systems",
@@ -94,7 +94,7 @@ export const education = [
     period: "Sep 2014 – Jul 2018",
     location: "Beijing, China",
     description:
-      "Studied data management, information systems, and applied analytics, with coursework in Data Mining, Database Systems, and Management of Information Systems.",
+      "Built a strong foundation in data management, information systems, and applied analytics.",
   },
 ];
 
@@ -123,11 +123,11 @@ export const projects = {
     {
       title: "Trend Intelligence Dashboard",
       description:
-        "Full-stack keyword trend dashboard that surfaces Google Trends, news, YouTube results, sentiment analysis, and a word cloud from a single search. Uses pytrends, GDELT 2.1, and ytsr — no paid APIs. Features two themes (Bloomberg dark / Apple light) and a FastAPI Python sidecar for NLP.",
-      tags: ["Next.js", "FastAPI", "Python", "TypeScript", "Recharts", "Tailwind"],
-      link: "#",
+        "Full-stack keyword trend dashboard surfacing Google Trends, news, YouTube results, sentiment analysis, and a word cloud from a single search — no paid APIs. Built with Next.js and deployed on Vercel. Features Bloomberg dark and Apple light themes.",
+      tags: ["Next.js", "TypeScript", "Recharts", "Tailwind CSS", "Vercel"],
+      link: "https://trendintel.vercel.app",
       github: "https://github.com/jz-tian/keyword_dashboard",
-      demoUrl: "",
+      demoUrl: "https://trendintel.vercel.app",
       image: "",
     },
   ],

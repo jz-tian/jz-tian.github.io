@@ -54,6 +54,8 @@ export interface T {
     tab1: string;
     tab2: string;
     liveDemo: string;
+    moreTitle: string;
+    moreSubtitle: string;
   };
   photography: {
     sectionLabel: string;
@@ -91,7 +93,7 @@ export const translations: Record<Lang, T> = {
       resume: "Resume",
     },
     hero: {
-      badge: "Open to opportunities",
+      badge: "Open to new connections",
       tagline: "I turn data into insights and ideas into apps — occasionally from behind a camera.",
       cta1: "View My Work",
       cta2: "Get In Touch",
@@ -104,15 +106,13 @@ export const translations: Record<Lang, T> = {
       sectionLabel: "About",
       title: "A bit about me",
       paragraphs: [
-        "I'm a data scientist with a background in information systems, working at the intersection of machine learning, analytics, and business intelligence. At Acxiom, I build predictive models and scalable data pipelines that support real marketing decisions for large clients.",
-        "What excites me most right now is how AI has transformed the way we build. I've become deeply interested in vibe coding, using modern AI tools to turn ideas and even vague \"what if\" thoughts into working applications within hours. You no longer need perfect coding skills to create something meaningful. If you can imagine it and are willing to experiment, you can build it. That mindset of daring to think and then making it real is what drives me.",
-        "Outside of data and development, I'm a hobby photographer drawn to landscapes, light, and quiet moments. Photography sharpens my sense for detail and perspective, qualities that carry over into my analytical work.",
-        "I'm fluent in Chinese, English, and German, with basic knowledge of Japanese and French. I genuinely enjoy learning languages and exploring different cultures, which continues to shape how I think and collaborate.",
-        "When I'm not building or learning, you'll likely find me on a tennis court or immersed in a good game. I enjoy both for the mix of strategy, focus, and creativity they require.",
+        "I'm a data scientist with a background in information systems, working across machine learning, analytics, and business intelligence. At Acxiom, I build predictive models and scalable data workflows that support real client decisions and turn complex datasets into useful business direction.",
+        "Lately, I've become especially interested in vibe coding: using AI tools to turn ideas into working apps quickly. I enjoy building things that are practical, fast to test, and shaped through experimentation, combining analytical thinking with a more creative way of making software.",
+        "Outside of work, I'm into photography, languages, and strategy-driven hobbies like tennis and games. Those interests sharpen how I observe details, adapt to new situations, and approach problems from different angles.",
       ],
       stats: [
-        { value: "3+", label: "Years in data" },
-        { value: "10+", label: "ML projects" },
+        { value: "5+", label: "Years in data" },
+        { value: "10+", label: "Apps built" },
         { value: "5", label: "Languages" },
         { value: "∞", label: "Curiosity" },
       ],
@@ -131,17 +131,17 @@ export const translations: Record<Lang, T> = {
         {
           title: "Data Analyst",
           description:
-            "Build and deploy logistic regression models and address selection strategies that drive direct marketing campaigns for major enterprise clients. Conduct customer structure analyses and data enrichment using SAS and Python, turning raw data into clear business insights. Actively involved in the company-wide platform migration from SAS to PySpark, modernizing data workflows at scale. Also develop Python scripts for web scraping and market analysis, and present findings directly to clients.",
+            "Build and deploy predictive models and address selection strategies for enterprise marketing campaigns. Use SAS and Python for customer structure analysis and data enrichment, support the migration from SAS to PySpark, and develop scripts for web scraping, market analysis, and client-facing insights.",
         },
         {
           title: "Machine Learning Research — Master Thesis",
           description:
-            "Built an anomaly detection pipeline combining supervised and unsupervised ML algorithms to identify failure patterns in log data from CT scanner machines. Used SHAP values to explain model outputs and deliver actionable insights that helped the after-sales service team reduce unplanned equipment downtime.",
+            "Built an anomaly detection pipeline for CT scanner log data, combining supervised and unsupervised methods. Used SHAP-based explainability to turn model outputs into insights that supported predictive maintenance.",
         },
         {
           title: "Working Student — Data Science, Sales Operations",
           description:
-            "Maintained and enriched the CRM customer database and built data visualizations using NumPy, Pandas, and Seaborn. Produced regular dashboards that gave the sales team better visibility into pipeline performance and conversion trends.",
+            "Maintained and enriched CRM data, built visualizations with Python tools, and delivered dashboards that gave the sales team clearer visibility into pipeline performance and conversion trends.",
         },
       ],
     },
@@ -152,12 +152,12 @@ export const translations: Record<Lang, T> = {
         {
           degree: "M.Sc. Information Systems",
           description:
-            "Coursework in Deep Learning, Business Analytics, Natural Language Processing, and Database Systems. Thesis on ML-based anomaly detection, carried out in collaboration with Siemens AG on real-world industrial data.",
+            "Focused on machine learning, business analytics, and database systems, with a thesis on industrial anomaly detection completed in collaboration with Siemens.",
         },
         {
           degree: "B.Sc. Information Systems",
           description:
-            "Studied data management, information systems, and applied analytics, with coursework in Data Mining, Database Systems, and Management of Information Systems.",
+            "Built a strong foundation in data management, information systems, and applied analytics.",
         },
       ],
     },
@@ -167,6 +167,8 @@ export const translations: Record<Lang, T> = {
       tab1: "Data & ML",
       tab2: "Vibe Coding",
       liveDemo: "Live Demo",
+      moreTitle: "More to come",
+      moreSubtitle: "New builds in progress",
     },
     photography: {
       sectionLabel: "Photography",
@@ -216,15 +218,13 @@ export const translations: Record<Lang, T> = {
       sectionLabel: "Über mich",
       title: "Ein bisschen über mich",
       paragraphs: [
-        "Ich bin Datenwissenschaftler mit einem Hintergrund in Informationssystemen und arbeite an der Schnittstelle von maschinellem Lernen, Analytics und Business Intelligence. Bei Acxiom entwickle ich prädiktive Modelle und skalierbare Datenpipelines, die reale Marketingentscheidungen für große Kunden unterstützen.",
-        "Was mich derzeit am meisten begeistert, ist, wie KI die Art und Weise ver\u00e4ndert hat, wie wir entwickeln. Ich habe mich intensiv mit Vibe Coding besch\u00e4ftigt \u2013 dem Einsatz moderner KI-Tools, um Ideen und selbst vage \u201eWas w\u00e4re wenn\u201c-Gedanken in wenigen Stunden in funktionierende Anwendungen zu verwandeln. Perfekte Programmierkenntnisse sind keine Voraussetzung mehr, um etwas Sinnvolles zu schaffen. Wer eine Idee hat und bereit ist zu experimentieren, kann sie umsetzen. Diese Denkweise \u2013 mutig denken und es dann Realit\u00e4t werden lassen \u2013 ist das, was mich antreibt.",
-        "Abseits von Daten und Entwicklung bin ich ein Hobbyfotograf, den Landschaften, Licht und stille Momente faszinieren. Fotografie schärft meinen Sinn für Detail und Perspektive – Qualitäten, die sich auf meine analytische Arbeit übertragen.",
-        "Ich spreche fließend Chinesisch, Englisch und Deutsch und verfüge über Grundkenntnisse in Japanisch und Französisch. Ich lerne wirklich gerne Sprachen und entdecke verschiedene Kulturen – das prägt weiterhin, wie ich denke und zusammenarbeite.",
-        "Wenn ich nicht gerade etwas entwickle oder lerne, findet man mich wahrscheinlich auf dem Tennisplatz oder vertieft in ein gutes Spiel. Beides schätze ich für die Mischung aus Strategie, Konzentration und Kreativität, die sie verlangen.",
+        "Ich bin Datenwissenschaftler mit einem Hintergrund in Informationssystemen und arbeite an der Schnittstelle von maschinellem Lernen, Analytics und Business Intelligence. Bei Acxiom entwickle ich prädiktive Modelle und skalierbare Datenworkflows, die komplexe Daten in konkrete Geschäftsentscheidungen übersetzen.",
+        "Besonders spannend finde ich derzeit Vibe Coding: den Einsatz von KI-Tools, um Ideen schnell in funktionierende Apps zu verwandeln. Mich reizt vor allem, Dinge pragmatisch zu bauen, schnell zu testen und sie durch Experimentieren Schritt für Schritt besser zu machen.",
+        "Außerhalb der Arbeit interessiere ich mich für Fotografie, Sprachen und strategische Hobbys wie Tennis und Games. Diese Interessen prägen auch, wie ich Details wahrnehme, mich auf Neues einstelle und Probleme aus unterschiedlichen Perspektiven angehe.",
       ],
       stats: [
-        { value: "3+", label: "Jahre Erfahrung" },
-        { value: "10+", label: "ML-Projekte" },
+        { value: "5+", label: "Jahre Erfahrung" },
+        { value: "10+", label: "Apps gebaut" },
         { value: "5", label: "Sprachen" },
         { value: "∞", label: "Neugier" },
       ],
@@ -243,17 +243,17 @@ export const translations: Record<Lang, T> = {
         {
           title: "Data Analyst",
           description:
-            "Entwicklung und Einsatz von logistischen Regressionsmodellen und datengetriebenen Adressselektionsstrategien für Direktmarketingkampagnen großer Unternehmenskunden. Durchführung von Kundenstrukturanalysen und Datenanreicherung mit SAS und Python. Aktive Beteiligung an der unternehmensweiten Plattformmigration von SAS auf PySpark zur Modernisierung der Datenworkflows. Erstellung von Python-Skripten für Web-Scraping und Marktanalysen sowie direkte Kundenpräsentationen.",
+            "Entwicklung und Einsatz prädiktiver Modelle sowie datengetriebener Adressselektionsstrategien für Marketingkampagnen großer Unternehmenskunden. Mit SAS und Python führe ich Kundenstrukturanalysen und Datenanreicherung durch, unterstütze die Migration von SAS zu PySpark und entwickle Skripte für Web-Scraping, Marktanalysen und klientenrelevante Insights.",
         },
         {
           title: "Machine-Learning-Forschung — Masterarbeit",
           description:
-            "Entwicklung einer Anomalieerkennungspipeline, die überwachte und unüberwachte ML-Algorithmen kombiniert, um Fehlermuster in Logdaten von CT-Scannern zu identifizieren. Einsatz von SHAP-Werten zur Modellerklärung und Ableitung konkreter Empfehlungen für den After-Sales-Service zur Reduzierung ungeplanter Ausfallzeiten.",
+            "Entwicklung einer Anomalieerkennungspipeline für Logdaten von CT-Scannern unter Kombination überwachter und unüberwachter Verfahren. Mit SHAP-basierter Modellerklärung wurden verwertbare Erkenntnisse für Predictive Maintenance abgeleitet.",
         },
         {
           title: "Werkstudent — Data Science, Vertrieb",
           description:
-            "Pflege und Anreicherung der CRM-Kundendatenbank sowie Erstellung von Datenvisualisierungen mit NumPy, Pandas und Seaborn. Bereitstellung regelmäßiger Dashboards für das Vertriebsteam zur besseren Übersicht über Pipeline-Performance und Konversionsraten.",
+            "Pflege und Anreicherung der CRM-Datenbank, Erstellung von Visualisierungen mit Python-Tools sowie Aufbau von Dashboards, die dem Vertrieb mehr Transparenz über Pipeline-Performance und Konversionsraten gaben.",
         },
       ],
     },
@@ -264,12 +264,12 @@ export const translations: Record<Lang, T> = {
         {
           degree: "M.Sc. Informationssysteme",
           description:
-            "Studium mit Schwerpunkten in Deep Learning, Business Analytics, Natural Language Processing und Datenbanksystemen. Abschlussarbeit über ML-basierte Anomalieerkennung in Zusammenarbeit mit der Siemens AG auf Basis realer industrieller Daten.",
+            "Schwerpunkte in Machine Learning, Business Analytics und Datenbanksystemen; Abschlussarbeit zur industriellen Anomalieerkennung in Zusammenarbeit mit Siemens.",
         },
         {
           degree: "B.Sc. Informationssysteme",
           description:
-            "Fundierte Grundlagenkenntnisse in Datenmanagement, Informationssystemen und angewandter Analytik durch Lehrveranstaltungen in Data Mining, Datenbanksystemen und Management von Informationssystemen.",
+            "Solide Grundlage in Datenmanagement, Informationssystemen und angewandter Analytik.",
         },
       ],
     },
@@ -279,6 +279,8 @@ export const translations: Record<Lang, T> = {
       tab1: "Daten & ML",
       tab2: "Vibe Coding",
       liveDemo: "Live Demo",
+      moreTitle: "Mehr kommt bald",
+      moreSubtitle: "Neue Projekte sind in Arbeit",
     },
     photography: {
       sectionLabel: "Fotografie",

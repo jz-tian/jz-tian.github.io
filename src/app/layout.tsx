@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, Playfair_Display, Space_Grotesk, JetBrains_Mono, Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -26,6 +26,18 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Jiazheng Tian — Data Scientist & Vibe Coder",
   description: "Personal portfolio of Jiazheng Tian — data scientist, vibe coder, and hobby photographer.",
@@ -37,10 +49,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${playfair.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${inter.variable} ${playfair.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${manrope.variable} ${plusJakartaSans.variable} antialiased`}
         style={{ fontFamily: "var(--font-inter), sans-serif" }}
+        suppressHydrationWarning
       >
         {children}
       </body>
