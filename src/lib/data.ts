@@ -16,7 +16,7 @@ export const personal = {
 
 export const about = {
   paragraphs: [
-    "I'm a data scientist with a background in information systems, working at the intersection of machine learning, analytics, and business intelligence. At Acxiom, I build predictive models and scalable data pipelines that support real marketing decisions for large clients.",
+    "I'm a Data Analyst and Data Scientist with a background in information systems, working at the intersection of machine learning, analytics, and business intelligence. At Acxiom, I build predictive models and scalable data pipelines that help clients make better marketing decisions and turn complex data into practical business value.",
     "What excites me most right now is how AI has transformed the way we build. I've become deeply interested in vibe coding, using modern AI tools to turn ideas and even vague \"what if\" thoughts into working applications within hours. You no longer need perfect coding skills to create something meaningful. If you can imagine it and are willing to experiment, you can build it. That mindset of daring to think and then making it real is what drives me.",
     "Outside of data and development, I'm a hobby photographer drawn to landscapes, light, and quiet moments. Photography sharpens my sense for detail and perspective, qualities that carry over into my analytical work.",
     "I'm fluent in Chinese, English, and German, with basic knowledge of Japanese and French. I genuinely enjoy learning languages and exploring different cultures, which continues to shape how I think and collaborate.",
@@ -54,7 +54,7 @@ export const skills = {
 
 export const workExperience = [
   {
-    title: "Data Analyst",
+    title: "Data Scientist/Data Analyst",
     company: "Acxiom Deutschland GmbH",
     period: "Feb 2022 – Present",
     location: "Munich, Germany",

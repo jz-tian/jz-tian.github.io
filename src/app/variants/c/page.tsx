@@ -49,6 +49,8 @@ function LangSwitcher({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => voi
 function Nav({ t, lang, setLang }: { t: T; lang: Lang; setLang: (l: Lang) => void }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const cvHref = withBasePath(lang === "de" ? "/cv/Lebenslauf_Jiazheng_Tian.pdf" : "/cv/cv_Jiazheng_Tian.pdf");
+  const cvDownloadName = lang === "de" ? "Lebenslauf_Jiazheng_Tian.pdf" : "cv_Jiazheng_Tian.pdf";
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 50);
@@ -115,7 +117,7 @@ function Nav({ t, lang, setLang }: { t: T; lang: Lang; setLang: (l: Lang) => voi
             </ul>
             <div className="mt-4 flex items-center gap-3">
               <LangSwitcher lang={lang} setLang={setLang} />
-              <a href={withBasePath(personal.cvFile)} download
+              <a href={cvHref} download={cvDownloadName}
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-white rounded-full"
                 style={{ background: ACCENT }}>
                 <FiDownload size={13} /> {t.nav.resume}
@@ -129,7 +131,9 @@ function Nav({ t, lang, setLang }: { t: T; lang: Lang; setLang: (l: Lang) => voi
 }
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
-function Hero({ t }: { t: T }) {
+function Hero({ t, lang }: { t: T; lang: Lang }) {
+  const cvHref = withBasePath(lang === "de" ? "/cv/Lebenslauf_Jiazheng_Tian.pdf" : "/cv/cv_Jiazheng_Tian.pdf");
+  const cvDownloadName = lang === "de" ? "Lebenslauf_Jiazheng_Tian.pdf" : "cv_Jiazheng_Tian.pdf";
   const ref = useRef<HTMLDivElement>(null);
   const photoRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: photoRef, offset: ["start 25%", "end start"] });
@@ -158,7 +162,7 @@ function Hero({ t }: { t: T }) {
               <span className="block">
                 <span style={{ color: ACCENT }}>{personal.name}</span>
               </span>
-              <span className="block">Data Scientist & Vibe Coder</span>
+              <span className="block">Data Analyst & Vibe Coder</span>
             </motion.h1>
 
             <motion.div variants={fadeUp} initial="hidden" animate="show" custom={2}
@@ -184,7 +188,7 @@ function Hero({ t }: { t: T }) {
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-gray-700 text-sm border border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm transition-all duration-200">
                 {t.hero.cta2}
               </a>
-              <a href={withBasePath(personal.cvFile)} download
+              <a href={cvHref} download={cvDownloadName}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-gray-700 text-sm border border-gray-200 bg-gray-50 hover:border-gray-300 hover:bg-white hover:shadow-sm transition-all duration-200">
                 <FiDownload size={14} /> {t.nav.resume}
               </a>
@@ -328,7 +332,7 @@ function About({ t }: { t: T }) {
                   className="p-3.5 sm:p-4 rounded-2xl border border-gray-100 bg-white hover:border-blue-100 hover:shadow-md transition-all duration-300 group">
                   <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3">
                     <p
-                      className={`font-black leading-none tracking-tight group-hover:text-blue-600 transition-colors ${s.value === "∞" ? "text-[1.9rem] sm:text-[2.15rem]" : "text-[2rem] sm:text-2xl"}`}
+                      className={`leading-none tracking-tight group-hover:text-blue-600 transition-colors ${s.value === "∞" ? "text-[1.9rem] sm:text-[2.15rem] font-bold" : "text-[2rem] sm:text-2xl font-black"}`}
                       style={{ color: ACCENT }}
                     >
                       {s.value}
@@ -765,7 +769,7 @@ export default function VariantC() {
   return (
     <main style={{ fontFamily: BODY_FONT }}>
       <Nav t={t} lang={lang} setLang={setLang} />
-      <Hero t={t} />
+      <Hero t={t} lang={lang} />
       <About t={t} />
       <Journey t={t} />
       <Projects t={t} />

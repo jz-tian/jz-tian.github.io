@@ -106,7 +106,7 @@ export const translations: Record<Lang, T> = {
       sectionLabel: "About",
       title: "A bit about me",
       paragraphs: [
-        "I'm a data scientist with a background in information systems, working across machine learning, analytics, and business intelligence. At Acxiom, I build predictive models and scalable data workflows that support real client decisions and turn complex datasets into useful business direction.",
+        "I'm a Data Analyst and Data Scientist with a background in information systems, working across machine learning, analytics, and business intelligence. At Acxiom, I build predictive models and scalable data workflows that help clients make better decisions and turn complex datasets into practical business value.",
         "Lately, I've become especially interested in vibe coding: using AI tools to turn ideas into working apps quickly. I enjoy building things that are practical, fast to test, and shaped through experimentation, combining analytical thinking with a more creative way of making software.",
         "Outside of work, I'm into photography, languages, and strategy-driven hobbies like tennis and games. Those interests sharpen how I observe details, adapt to new situations, and approach problems from different angles.",
       ],
@@ -218,7 +218,7 @@ export const translations: Record<Lang, T> = {
       sectionLabel: "Über mich",
       title: "Ein bisschen über mich",
       paragraphs: [
-        "Ich bin Datenwissenschaftler mit einem Hintergrund in Informationssystemen und arbeite an der Schnittstelle von maschinellem Lernen, Analytics und Business Intelligence. Bei Acxiom entwickle ich prädiktive Modelle und skalierbare Datenworkflows, die komplexe Daten in konkrete Geschäftsentscheidungen übersetzen.",
+        "Ich arbeite als Data Analyst und Data Scientist mit einem Hintergrund in Informationssystemen an der Schnittstelle von maschinellem Lernen, Analytics und Business Intelligence. Bei Acxiom entwickle ich prädiktive Modelle und skalierbare Datenworkflows, die Kunden helfen, bessere Entscheidungen zu treffen und komplexe Datensaetze in praktischen Geschaeftswert zu uebersetzen.",
         "Besonders spannend finde ich derzeit Vibe Coding: den Einsatz von KI-Tools, um Ideen schnell in funktionierende Apps zu verwandeln. Mich reizt vor allem, Dinge pragmatisch zu bauen, schnell zu testen und sie durch Experimentieren Schritt für Schritt besser zu machen.",
         "Außerhalb der Arbeit interessiere ich mich für Fotografie, Sprachen und strategische Hobbys wie Tennis und Games. Diese Interessen prägen auch, wie ich Details wahrnehme, mich auf Neues einstelle und Probleme aus unterschiedlichen Perspektiven angehe.",
       ],
@@ -241,9 +241,9 @@ export const translations: Record<Lang, T> = {
       title: "Wo ich gearbeitet habe",
       items: [
         {
-          title: "Data Analyst",
+          title: "Data Scientist/Data Analyst",
           description:
-            "Entwicklung und Einsatz prädiktiver Modelle sowie datengetriebener Adressselektionsstrategien für Marketingkampagnen großer Unternehmenskunden. Mit SAS und Python führe ich Kundenstrukturanalysen und Datenanreicherung durch, unterstütze die Migration von SAS zu PySpark und entwickle Skripte für Web-Scraping, Marktanalysen und klientenrelevante Insights.",
+            "Ich entwickle prädiktive Modelle auf Basis von Kundendaten, darunter logistische Modelle fuer Adressselektionsstrategien, um Kampagnen-Targeting und Marketingwirkung zu verbessern. Mit SAS und Python liefere ich Kundenstrukturanalysen und Datenanreicherungs-Workflows, unterstuetze die Weiterentwicklung analytischer Workflows in Richtung PySpark-basierter Loesungen und uebersetze Ergebnisse in klare Empfehlungen fuer Kunden und interne Stakeholder.",
         },
         {
           title: "Machine-Learning-Forschung — Masterarbeit",
