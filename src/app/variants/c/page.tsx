@@ -1,16 +1,18 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { personal, workExperience, education, projects, photos, profilePhoto } from "@/lib/data";
+import { personal, workExperience, education, projects, photos, profilePhotos } from "@/lib/data";
+import { withBasePath } from "@/lib/site";
 import { translations, type Lang, type T } from "@/lib/translations";
 import {
   FiMail, FiLinkedin, FiGithub, FiMapPin, FiMenu, FiX,
-  FiExternalLink, FiDownload, FiCode, FiCamera, FiDatabase,
-  FiArrowRight, FiCalendar, FiBriefcase, FiBook, FiArrowUpRight, FiChevronDown,
+  FiDownload, FiCode, FiArrowRight, FiBriefcase, FiBook, FiArrowUpRight, FiChevronDown,
 } from "react-icons/fi";
-import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+
+const Lightbox = dynamic(() => import("yet-another-react-lightbox"), { ssr: false });
 
 const ACCENT = "#0066FF";
 const ACCENT_LIGHT = "#EBF2FF";
@@ -113,7 +115,7 @@ function Nav({ t, lang, setLang }: { t: T; lang: Lang; setLang: (l: Lang) => voi
             </ul>
             <div className="mt-4 flex items-center gap-3">
               <LangSwitcher lang={lang} setLang={setLang} />
-              <a href={personal.cvFile} download
+              <a href={withBasePath(personal.cvFile)} download
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-white rounded-full"
                 style={{ background: ACCENT }}>
                 <FiDownload size={13} /> {t.nav.resume}
@@ -181,7 +183,7 @@ function Hero({ t }: { t: T }) {
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-gray-700 text-sm border border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm transition-all duration-200">
                 {t.hero.cta2}
               </a>
-              <a href={personal.cvFile} download
+              <a href={withBasePath(personal.cvFile)} download
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-gray-700 text-sm border border-gray-200 bg-gray-50 hover:border-gray-300 hover:bg-white hover:shadow-sm transition-all duration-200">
                 <FiDownload size={14} /> {t.nav.resume}
               </a>
@@ -230,11 +232,13 @@ function Hero({ t }: { t: T }) {
               <div className="absolute inset-6 rounded-[2rem] border border-white/60 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
               <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_top_right,rgba(0,102,255,0.22),transparent_30%),linear-gradient(to_right,#dbe7ff_1px,transparent_1px),linear-gradient(to_bottom,#dbe7ff_1px,transparent_1px)] bg-[size:auto,36px_36px,36px_36px] opacity-0 transition-opacity duration-500 group-hover:opacity-45" />
               <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-[0_24px_60px_rgba(15,23,42,0.14)] border border-gray-100 bg-white">
-                {profilePhoto ? (
+                {profilePhotos.hero ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
-                    src={profilePhoto}
+                    src={withBasePath(profilePhotos.hero)}
                     alt={personal.name}
+                    loading="eager"
+                    fetchPriority="high"
                     className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.045] group-hover:-translate-y-1"
                   />
                 ) : (
@@ -310,8 +314,9 @@ function About({ t }: { t: T }) {
               <div className="absolute inset-x-0 bottom-0 h-1" style={{ background: ACCENT }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/profile_2.JPG"
+                src={withBasePath(profilePhotos.about)}
                 alt={`${personal.name} portrait`}
+                loading="lazy"
                 className="h-[280px] sm:h-[420px] w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               />
             </motion.div>
@@ -476,20 +481,34 @@ function Projects({ t }: { t: T }) {
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
           <AnimatePresence mode="wait">
             {items.map((p, i) => (
+              (() => {
+                const hasPreviewImage = Boolean(p.image);
+
+                return (
               <motion.article key={p.title}
                 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
                 transition={{ delay: i * 0.1, duration: 0.4 }}
                 className="group rounded-2xl border border-gray-100 bg-white overflow-hidden hover:border-blue-100 hover:shadow-xl hover:shadow-blue-50 transition-all duration-300 flex flex-col">
                 <div className="h-40 flex items-center justify-center relative overflow-hidden flex-shrink-0"
                   style={{ background: `linear-gradient(135deg, ${ACCENT_LIGHT}, #f8f9ff)` }}>
-                  {"demoUrl" in p && p.demoUrl ? (
-                    <iframe src={p.demoUrl as string} title={p.title} className="w-full h-full" loading="lazy" sandbox="allow-scripts allow-same-origin" />
+                  {hasPreviewImage ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={withBasePath(p.image)}
+                      alt={`${p.title} preview`}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover object-top"
+                    />
                   ) : (
                     <div className="text-5xl opacity-20" style={{ color: ACCENT }}>
-                      <FiCode />
+                      <FiCode size={12} />
                     </div>
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute left-5 top-5 inline-flex w-fit items-center gap-2 rounded-full border border-blue-100 bg-white/92 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.24em] text-blue-600 shadow-sm backdrop-blur-sm">
+                    <FiCode size={12} />
+                    Featured Build
+                  </div>
                 </div>
 
                 <div className="p-5 flex flex-col flex-1">
@@ -513,6 +532,8 @@ function Projects({ t }: { t: T }) {
                   </div>
                 </div>
               </motion.article>
+                );
+              })()
             ))}
             <motion.article
               key="more-to-come"
@@ -544,7 +565,12 @@ function Photography({ t }: { t: T }) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const realPhotos = photos.filter((p) => p.src !== "");
-  const lightboxSlides = realPhotos.map((p) => ({ src: p.src, alt: p.alt, width: p.width, height: p.height }));
+  const lightboxSlides = realPhotos.map((p) => ({
+    src: withBasePath(p.src),
+    alt: p.alt,
+    width: p.width,
+    height: p.height,
+  }));
 
   const openLightbox = (src: string) => {
     const idx = realPhotos.findIndex((p) => p.src === src);
@@ -565,7 +591,7 @@ function Photography({ t }: { t: T }) {
               className="break-inside-avoid cursor-pointer group relative overflow-hidden rounded-xl"
               onClick={() => openLightbox(photo.src)}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={photo.src} alt={photo.alt}
+              <img src={withBasePath(photo.thumbSrc)} alt={photo.alt}
                 className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 style={{ display: "block" }}
                 loading="lazy" />
@@ -588,14 +614,38 @@ function Photography({ t }: { t: T }) {
 }
 
 // ─── Contact ──────────────────────────────────────────────────────────────────
-function Contact({ t }: { t: T }) {
+function Contact({ t, lang }: { t: T; lang: Lang }) {
+  const contactCopy = lang === "de"
+    ? {
+      badge: "Direkter Kontakt",
+      title: "Am besten per E-Mail.",
+      email: "E-Mail schreiben",
+      linkedin: "Auf LinkedIn schreiben",
+      note: "Offen fuer spannende Rollen, App-Ideen und gute Gespraeche ueber Daten, Produkte und Fotografie.",
+      availabilityLabel: "Verfuegbar fuer",
+      availabilityValue: "Neue Projekte und Kontakte",
+      responseLabel: "Antwortzeit",
+      responseValue: "Normalerweise innerhalb weniger Tage",
+    }
+    : {
+      badge: "Direct Contact",
+      title: "Start with email.",
+      email: "Email Me",
+      linkedin: "Message on LinkedIn",
+      note: "Open to interesting roles, app ideas, and thoughtful conversations about data, products, and photography.",
+      availabilityLabel: "Available for",
+      availabilityValue: "New projects and conversations",
+      responseLabel: "Response time",
+      responseValue: "Usually within a few days",
+    };
+
   return (
     <section id="contact" className="py-24 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <SectionLabel num="05" label={t.contact.sectionLabel} />
         <SectionTitle>{t.contact.title}</SectionTitle>
 
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+        <div className="grid items-start lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-5">
             <motion.p variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
               className="text-gray-600 text-lg leading-relaxed mb-10">
@@ -625,29 +675,55 @@ function Contact({ t }: { t: T }) {
           </div>
 
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
-            className="lg:col-span-6 lg:col-start-7">
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-              {[
-                { label: t.contact.nameLabel, type: "text", placeholder: t.contact.namePlaceholder },
-                { label: t.contact.emailLabel, type: "email", placeholder: t.contact.emailPlaceholder },
-              ].map((f) => (
-                <div key={f.label}>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">{f.label}</label>
-                  <input type={f.type} placeholder={f.placeholder}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm outline-none transition-all duration-200 focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-50 placeholder:text-gray-300" />
-                </div>
-              ))}
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">{t.contact.messageLabel}</label>
-                <textarea rows={5} placeholder={t.contact.messagePlaceholder}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm outline-none transition-all duration-200 focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-50 resize-none placeholder:text-gray-300" />
+            className="lg:col-span-6 lg:col-start-7 lg:-mt-16">
+            <div className="relative overflow-hidden rounded-[2rem] border border-gray-100 bg-white p-8 shadow-[0_20px_45px_rgba(15,23,42,0.06)]">
+              <div className="absolute inset-x-0 top-0 h-1.5" style={{ background: ACCENT }} />
+              <div className="absolute -right-8 -top-10 h-32 w-32 rounded-full opacity-70"
+                style={{ background: "radial-gradient(circle, rgba(0,102,255,0.14), transparent 68%)" }} />
+
+              <div className="relative inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/70 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.24em] text-blue-600">
+                <FiMail size={12} />
+                {contactCopy.badge}
               </div>
-              <button type="submit"
-                className="w-full py-3.5 rounded-xl font-semibold text-white text-sm transition-all duration-200 hover:opacity-90 hover:shadow-lg flex items-center justify-center gap-2"
-                style={{ background: ACCENT, boxShadow: `0 4px 16px ${ACCENT}30` }}>
-                {t.contact.send} <FiArrowRight size={15} />
-              </button>
-            </form>
+
+              <h3 className="relative mt-6 max-w-md text-[2rem] leading-tight font-black text-gray-900" style={{ fontFamily: TITLE_FONT }}>
+                {contactCopy.title}
+              </h3>
+
+              <p className="relative mt-4 max-w-xl text-base leading-relaxed text-gray-500">
+                {contactCopy.note}
+              </p>
+
+              <div className="relative mt-8 grid gap-3 sm:grid-cols-2">
+                <a
+                  href={`mailto:${personal.email}?subject=${encodeURIComponent("Hello Jiazheng")}`}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:opacity-90 hover:shadow-lg"
+                  style={{ background: ACCENT, boxShadow: `0 12px 30px ${ACCENT}25` }}
+                >
+                  {contactCopy.email} <FiArrowRight size={15} />
+                </a>
+                <a
+                  href={personal.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-5 py-3.5 text-sm font-semibold text-gray-700 transition-all duration-200 hover:border-gray-300 hover:shadow-sm"
+                >
+                  {contactCopy.linkedin} <FiArrowUpRight size={15} />
+                </a>
+              </div>
+
+              <div className="relative mt-8 grid gap-3 sm:grid-cols-2">
+                {[
+                  { label: contactCopy.availabilityLabel, value: contactCopy.availabilityValue },
+                  { label: contactCopy.responseLabel, value: contactCopy.responseValue },
+                ].map((item) => (
+                  <div key={item.label} className="rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-gray-400">{item.label}</p>
+                    <p className="mt-2 text-sm font-semibold leading-relaxed text-gray-700">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -693,7 +769,7 @@ export default function VariantC() {
       <Journey t={t} />
       <Projects t={t} />
       <Photography t={t} />
-      <Contact t={t} />
+      <Contact t={t} lang={lang} />
       <Footer t={t} />
     </main>
   );

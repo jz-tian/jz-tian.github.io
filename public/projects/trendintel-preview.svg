@@ -1,0 +1,34 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="60" x2="1120" y2="660" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="180" y1="180" x2="1020" y2="580" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#1E293B" stop-opacity="0.78"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" rx="36" fill="#EAF1FF"/>
+  <rect x="48" y="48" width="1104" height="624" rx="32" fill="url(#bg)"/>
+  <circle cx="1070" cy="120" r="94" fill="#60A5FA" fill-opacity="0.18"/>
+  <circle cx="140" cy="600" r="132" fill="#93C5FD" fill-opacity="0.16"/>
+  <rect x="96" y="104" width="180" height="48" rx="24" fill="#F8FAFC" fill-opacity="0.94"/>
+  <path d="M140 128L128 140L140 152" stroke="#2563EB" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M180 128L192 140L180 152" stroke="#2563EB" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M161 124L149 156" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
+  <text x="214" y="144" fill="#2563EB" font-size="24" font-family="SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="5">FEATURED BUILD</text>
+  <text x="96" y="226" fill="#C7D2FE" font-size="20" font-family="SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="5">TREND INTELLIGENCE</text>
+  <text x="96" y="300" fill="#F8FAFC" font-size="56" font-weight="700" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">Trend Intelligence</text>
+  <text x="96" y="362" fill="#F8FAFC" font-size="56" font-weight="700" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">Dashboard</text>
+  <text x="96" y="418" fill="#CBD5E1" font-size="24" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">Search trends, headlines, YouTube, sentiment, and a word cloud in one place.</text>
+  <rect x="96" y="468" width="1008" height="140" rx="24" fill="url(#panel)" stroke="#93C5FD" stroke-opacity="0.22"/>
+  <rect x="132" y="510" width="328" height="56" rx="14" fill="#0F172A" stroke="#334155"/>
+  <text x="158" y="546" fill="#94A3B8" font-size="20" font-family="SFMono-Regular, Menlo, Consolas, monospace">e.g. Tesla, Finance...</text>
+  <circle cx="420" cy="538" r="12" stroke="#94A3B8" stroke-width="4"/>
+  <path d="M429 547L441 559" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+  <rect x="500" y="510" width="230" height="56" rx="14" fill="#0F172A" stroke="#334155"/>
+  <text x="528" y="546" fill="#E2E8F0" font-size="22" font-family="SFMono-Regular, Menlo, Consolas, monospace">REGION</text>
+  <rect x="760" y="510" width="308" height="56" rx="14" fill="#0F172A" stroke="#334155"/>
+  <text x="788" y="546" fill="#E2E8F0" font-size="22" font-family="SFMono-Regular, Menlo, Consolas, monospace">TIME WINDOW</text>
+</svg>

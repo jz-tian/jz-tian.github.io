@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+:root {
+  --font-inter: "Inter", "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-playfair: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-space-grotesk: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-manrope: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-plus-jakarta: "Inter", "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-jetbrains: "SFMono-Regular", "JetBrains Mono", "Cascadia Code", "Menlo", "Consolas", monospace;
+}
+
 @theme inline {
   --color-background: #ffffff;
   --color-foreground: #111111;
@@ -36,6 +45,7 @@ html {
 body {
   background: #ffffff;
   color: #111111;
+  font-family: var(--font-inter);
 }
 
 /* Gradient text utility */

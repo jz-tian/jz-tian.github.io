@@ -123,31 +123,32 @@ export const projects = {
     {
       title: "Trend Intelligence Dashboard",
       description:
-        "Full-stack keyword trend dashboard surfacing Google Trends, news, YouTube results, sentiment analysis, and a word cloud from a single search — no paid APIs. Built with Next.js and deployed on Vercel. Features Bloomberg dark and Apple light themes.",
+        "Full-stack keyword trend dashboard surfacing Google Trends, news, YouTube results, sentiment analysis, and a word cloud from a single search — no paid APIs. Built with Next.js and deployed on Vercel.",
       tags: ["Next.js", "TypeScript", "Recharts", "Tailwind CSS", "Vercel"],
       link: "https://trendintel.vercel.app",
       github: "https://github.com/jz-tian/keyword_dashboard",
-      demoUrl: "https://trendintel.vercel.app",
-      image: "",
+      image: "/projects/trendintel-preview.svg",
     },
   ],
 };
 
-// Profile picture — drop your photo into /public/ and update the path below
-export const profilePhoto = "/profile.JPG";
+export const profilePhotos = {
+  hero: "/profile.jpg",
+  about: "/profile/profile_about.jpg",
+};
 
 // Photography — add/remove entries to match your files in /public/photos/
-export const photos: Array<{ src: string; alt: string; width: number; height: number }> = [
-  { src: "/photos/DSC00594.JPG", alt: "Photo", width: 6000, height: 3376 },
-  { src: "/photos/DSC00615.JPG", alt: "Photo", width: 6000, height: 3376 },
-  { src: "/photos/DSC01146.JPG", alt: "Photo", width: 6000, height: 3376 },
-  { src: "/photos/DSC01299.JPG", alt: "Photo", width: 6000, height: 3376 },
-  { src: "/photos/DSC01639.JPG", alt: "Photo", width: 6000, height: 3376 },
-  { src: "/photos/DSC04342.JPG", alt: "Photo", width: 6000, height: 3376 },
-  { src: "/photos/DSC04511.JPG", alt: "Photo", width: 6000, height: 3376 },
-  { src: "/photos/DSC04536.JPG", alt: "Photo", width: 6000, height: 3376 },
-  { src: "/photos/DSC04806.JPG", alt: "Photo", width: 6000, height: 3376 },
-  { src: "/photos/DSC04970.JPG", alt: "Photo", width: 3376, height: 6000 },
-  { src: "/photos/DSC05004.JPG", alt: "Photo", width: 6000, height: 3376 },
-  { src: "/photos/DSC05094.JPG", alt: "Photo", width: 6000, height: 3376 },
+export const photos: Array<{ src: string; thumbSrc: string; alt: string; width: number; height: number }> = [
+  { src: "/photos/DSC00594.JPG", thumbSrc: "/photos/thumbs/DSC00594.JPG", alt: "Photo", width: 6000, height: 3376 },
+  { src: "/photos/DSC00615.JPG", thumbSrc: "/photos/thumbs/DSC00615.JPG", alt: "Photo", width: 6000, height: 3376 },
+  { src: "/photos/DSC01146.JPG", thumbSrc: "/photos/thumbs/DSC01146.JPG", alt: "Photo", width: 6000, height: 3376 },
+  { src: "/photos/DSC01299.JPG", thumbSrc: "/photos/thumbs/DSC01299.JPG", alt: "Photo", width: 6000, height: 3376 },
+  { src: "/photos/DSC01639.JPG", thumbSrc: "/photos/thumbs/DSC01639.JPG", alt: "Photo", width: 6000, height: 3376 },
+  { src: "/photos/DSC04342.JPG", thumbSrc: "/photos/thumbs/DSC04342.JPG", alt: "Photo", width: 6000, height: 3376 },
+  { src: "/photos/DSC04511.JPG", thumbSrc: "/photos/thumbs/DSC04511.JPG", alt: "Photo", width: 6000, height: 3376 },
+  { src: "/photos/DSC04536.JPG", thumbSrc: "/photos/thumbs/DSC04536.JPG", alt: "Photo", width: 6000, height: 3376 },
+  { src: "/photos/DSC04806.JPG", thumbSrc: "/photos/thumbs/DSC04806.JPG", alt: "Photo", width: 6000, height: 3376 },
+  { src: "/photos/DSC04970.JPG", thumbSrc: "/photos/thumbs/DSC04970.JPG", alt: "Photo", width: 3376, height: 6000 },
+  { src: "/photos/DSC05004.JPG", thumbSrc: "/photos/thumbs/DSC05004.JPG", alt: "Photo", width: 6000, height: 3376 },
+  { src: "/photos/DSC05094.JPG", thumbSrc: "/photos/thumbs/DSC05094.JPG", alt: "Photo", width: 6000, height: 3376 },
 ];
