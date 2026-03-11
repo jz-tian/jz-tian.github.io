@@ -112,7 +112,7 @@ export const translations: Record<Lang, T> = {
       ],
       stats: [
         { value: "5+", label: "Years in data" },
-        { value: "10+", label: "Apps built" },
+        { value: "5+", label: "Apps built" },
         { value: "5", label: "Languages" },
         { value: "∞", label: "Curiosity" },
       ],
@@ -224,7 +224,7 @@ export const translations: Record<Lang, T> = {
       ],
       stats: [
         { value: "5+", label: "Jahre Erfahrung" },
-        { value: "10+", label: "Apps gebaut" },
+        { value: "5+", label: "Apps gebaut" },
         { value: "5", label: "Sprachen" },
         { value: "∞", label: "Neugier" },
       ],

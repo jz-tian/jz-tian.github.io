@@ -131,9 +131,10 @@ function Nav({ t, lang, setLang }: { t: T; lang: Lang; setLang: (l: Lang) => voi
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 function Hero({ t }: { t: T }) {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const photoRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: photoRef, offset: ["start 25%", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.12, 1], [1, 1, 0.08]);
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden bg-white">
@@ -205,7 +206,7 @@ function Hero({ t }: { t: T }) {
           </div>
 
           {/* Right — photo */}
-          <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}
+          <motion.div ref={photoRef} initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="lg:col-span-2 flex justify-center lg:justify-end lg:pt-6">
             <div className="group relative w-72 h-72 md:w-[300px] md:h-[370px] lg:w-full lg:max-w-[390px] lg:h-[455px]">
@@ -294,7 +295,7 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 // ─── About ────────────────────────────────────────────────────────────────────
 function About({ t }: { t: T }) {
   const capabilityGroups = [
-    { label: t.skills.groups[0], items: ["Python", "SQL", "EDA", "NLP", "Supervised Learning"] },
+    { label: t.skills.groups[0], items: ["Python", "SQL", "EDA", "NLP", "GenAI"] },
     { label: t.skills.groups[1], items: ["Claude Code", "Next.js", "Node.js", "TypeScript", "Tailwind CSS"] },
     { label: "Tools", items: ["Git", "Spark", "Power BI", "AWS"] },
   ];
@@ -327,7 +328,7 @@ function About({ t }: { t: T }) {
                   className="p-3.5 sm:p-4 rounded-2xl border border-gray-100 bg-white hover:border-blue-100 hover:shadow-md transition-all duration-300 group">
                   <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3">
                     <p
-                      className={`font-black leading-none tracking-tight group-hover:text-blue-600 transition-colors ${s.value === "∞" ? "text-[1.9rem] sm:text-[2.15rem]" : "text-[2rem] sm:text-2xl"} ${s.value === "10+" ? "tracking-[-0.04em]" : ""}`}
+                      className={`font-black leading-none tracking-tight group-hover:text-blue-600 transition-colors ${s.value === "∞" ? "text-[1.9rem] sm:text-[2.15rem]" : "text-[2rem] sm:text-2xl"}`}
                       style={{ color: ACCENT }}
                     >
                       {s.value}
