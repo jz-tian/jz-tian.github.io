@@ -59,7 +59,7 @@ export const workExperience = [
     period: "Feb 2022 – Present",
     location: "Munich, Germany",
     description:
-      "Build and deploy predictive models and address selection strategies for enterprise marketing campaigns. Use SAS and Python for customer structure analysis and data enrichment, support the migration from SAS to PySpark, and develop scripts for web scraping, market analysis, and client-facing insights.",
+      "Build predictive models from customer data, including logistic-model based address selection strategies, to improve campaign targeting and marketing effectiveness. Deliver customer structure analysis and data enrichment workflows using SAS and Python, support the transition of analytical workflows toward PySpark-based solutions, and turn findings into clear recommendations for clients and internal stakeholders.",
   },
   {
     title: "Machine Learning Research — Master Thesis",
