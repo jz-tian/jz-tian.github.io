@@ -34,3 +34,34 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Deploy to GitHub Pages
+
+This project is configured for static export and GitHub Pages deployment via [`.github/workflows/deploy.yml`](/Users/jiazheng/idol/claude_projects/personal_website/.github/workflows/deploy.yml).
+
+For a GitHub Pages user site, the published URL is:
+
+```text
+https://jz-tian.github.io/
+```
+
+This only works when the repository itself is named:
+
+```text
+jz-tian.github.io
+```
+
+To deploy after renaming the repository:
+
+```bash
+git add .
+git commit -m "Configure GitHub Pages user site deployment"
+git push origin master
+```
+
+Then in GitHub:
+
+1. Open the `jz-tian.github.io` repository.
+2. Go to `Settings > Pages`.
+3. Set `Source` to `GitHub Actions`.
+4. Wait for the `Deploy to GitHub Pages` workflow to finish.
