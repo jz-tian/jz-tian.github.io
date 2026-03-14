@@ -129,6 +129,15 @@ export const projects = {
       github: "https://github.com/jz-tian/keyword_dashboard",
       image: "/projects/trendintel-preview.svg",
     },
+    {
+      title: "RabattHunter",
+      description:
+        "Live German supermarket discount tracker aggregating weekly deals from ALDI, Lidl, NORMA, EDEKA, and Denns BioMarkt. Features real-time scraping from official retailer APIs, auto-categorisation, full-text search, and a persistent shopping list with CSV export.",
+      tags: ["Next.js", "React 19", "Turso", "SQLite", "Vercel"],
+      link: "https://rabatt-hunter.vercel.app",
+      github: "https://github.com/jz-tian/prospekt_hunter",
+      image: "/projects/rabatthunter-preview.svg",
+    },
   ],
 };
 
