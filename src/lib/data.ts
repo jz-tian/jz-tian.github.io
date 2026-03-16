@@ -121,6 +121,15 @@ export const projects = {
   ],
   vibeCoding: [
     {
+      title: "落書き Rakugaki",
+      description:
+        "AI-powered drawing game with a Japanese washi-paper aesthetic. Gemini 2.5 Flash generates a random prompt, you draw it in 120 seconds, then Gemini Vision scores your work and writes a humorous comment. Features three brush styles, flood fill, undo/redo, a gallery with JPG export, and full EN/中文 localisation.",
+      tags: ["Next.js", "TypeScript", "Gemini API", "Canvas API", "Tailwind CSS"],
+      link: "#",
+      github: "https://github.com/jz-tian/rakugaki",
+      image: "/projects/rakugaki-demo.gif",
+    },
+    {
       title: "Trend Intelligence Dashboard",
       description:
         "Full-stack keyword trend dashboard surfacing Google Trends, news, YouTube results, sentiment analysis, and a word cloud from a single search — no paid APIs. Built with Next.js and deployed on Vercel.",
