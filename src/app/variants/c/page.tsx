@@ -197,9 +197,9 @@ function Hero({ t, lang }: { t: T; lang: Lang }) {
             <motion.div variants={fadeUp} initial="hidden" animate="show" custom={5}
               className="flex items-center gap-4">
               {[
+                { href: `mailto:${personal.email}`, icon: <FiMail size={17} /> },
                 { href: personal.linkedin, icon: <FiLinkedin size={17} /> },
                 { href: personal.github, icon: <FiGithub size={17} /> },
-                { href: `mailto:${personal.email}`, icon: <FiMail size={17} /> },
               ].map(({ href, icon }) => (
                 <a key={href} href={href} target="_blank" rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 bg-white text-gray-400 hover:text-gray-900 hover:border-gray-300 hover:shadow-sm transition-all duration-200">
@@ -528,10 +528,10 @@ function Projects({ t }: { t: T }) {
                   <h3 className="text-base font-bold text-gray-900 mb-2" style={{ fontFamily: TITLE_FONT }}>{p.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-4">{p.description}</p>
                   <div className="flex items-center gap-4 pt-3 border-t border-gray-100">
-                    <a href={p.link} className="flex items-center gap-1.5 text-sm font-semibold transition-colors hover:underline" style={{ color: ACCENT }}>
+                    <a href={p.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-sm font-semibold transition-colors hover:underline" style={{ color: ACCENT }}>
                       {t.projects.liveDemo} <FiArrowUpRight size={13} />
                     </a>
-                    <a href={p.github} className="flex items-center gap-1.5 text-sm font-medium text-gray-400 hover:text-gray-700 transition-colors">
+                    <a href={p.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-sm font-medium text-gray-400 hover:text-gray-700 transition-colors">
                       <FiGithub size={13} /> GitHub
                     </a>
                   </div>
@@ -646,7 +646,11 @@ function Contact({ t }: { t: T }) {
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs text-gray-400 font-medium">{item.sub}</p>
-                  <p className="text-sm font-semibold text-gray-700 group-hover:text-gray-900 break-words">{item.label}</p>
+                  <p className="text-sm font-semibold text-gray-700 group-hover:text-gray-900 break-all">
+                    {item.label.includes('@')
+                      ? <>{item.label.split('@')[0]}<wbr/>{'@'}{item.label.split('@')[1]}</>
+                      : item.label}
+                  </p>
                 </div>
                 <FiArrowUpRight className="ml-auto text-gray-300 group-hover:text-blue-500 transition-colors" size={16} />
               </motion.a>
@@ -668,9 +672,9 @@ function Footer({ t }: { t: T }) {
         </p>
         <div className="flex gap-4">
           {[
+            { href: `mailto:${personal.email}`, icon: <FiMail size={16} /> },
             { href: personal.linkedin, icon: <FiLinkedin size={16} /> },
             { href: personal.github, icon: <FiGithub size={16} /> },
-            { href: `mailto:${personal.email}`, icon: <FiMail size={16} /> },
           ].map(({ href, icon }) => (
             <a key={href} href={href} target="_blank" rel="noopener noreferrer"
               className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:text-gray-900 hover:bg-gray-200 transition-all duration-200">
