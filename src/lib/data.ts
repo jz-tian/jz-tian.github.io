@@ -145,7 +145,7 @@ export const projects = {
       tags: ["HTML/CSS/JS", "Google Imagen 4", "Node.js", "sharp", "SVG Animation"],
       link: "https://rabbit-garden.vercel.app",
       github: "https://github.com/jz-tian/rabbit_garden",
-      image: "/projects/rabbit-garden-preview.svg",
+      image: "/projects/rabbit-garden-demo.gif",
     },
     {
       title: "RabattHunter",
