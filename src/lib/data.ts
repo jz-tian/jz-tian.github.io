@@ -139,6 +139,15 @@ export const projects = {
       image: "/projects/trendintel-preview.svg",
     },
     {
+      title: "Rabbit Garden",
+      description:
+        "A single-page interactive encyclopedia of rabbit breeds. Six breeds peek up from a botanical hero, each clickable to reveal a full profile — origin, temperament, stats, and three AI-generated photos in animated organic blob frames. Built with vanilla HTML/CSS/JS; all imagery generated with Google Imagen 4 and background-removed via a custom BFS flood-fill algorithm.",
+      tags: ["HTML/CSS/JS", "Google Imagen 4", "Node.js", "sharp", "SVG Animation"],
+      link: "https://rabbit-garden.vercel.app",
+      github: "https://github.com/jz-tian/rabbit_garden",
+      image: "/projects/rabbit-garden-preview.svg",
+    },
+    {
       title: "RabattHunter",
       description:
         "Live German supermarket discount tracker aggregating weekly deals from ALDI, Lidl, NORMA, EDEKA, and Denns BioMarkt. Features real-time scraping from official retailer APIs, auto-categorisation, full-text search, and a persistent shopping list with CSV export.",
