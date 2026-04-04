@@ -121,6 +121,15 @@ export const projects = {
   ],
   vibeCoding: [
     {
+      title: "Aurora",
+      description:
+        "Real-time aurora borealis tracker with an interactive 3D globe. Pulls live data from NOAA SWPC every 30 minutes, ranks the top 10 viewing sites by aurora intensity, shows cloud cover and a 48-hour Kp forecast, and detects your location via IP to assess visibility from where you are.",
+      tags: ["Next.js", "Three.js", "GLSL", "TypeScript", "NOAA SWPC", "Tailwind CSS"],
+      link: "https://globe-aurora-live.vercel.app",
+      github: "https://github.com/jz-tian/globe_aurora",
+      image: "/projects/aurora-demo.gif",
+    },
+    {
       title: "落書き Rakugaki",
       description:
         "AI-powered drawing game with a Japanese washi-paper aesthetic. Gemini 2.5 Flash generates a random prompt, you draw it in 120 seconds, then Gemini Vision scores your work and writes a humorous comment. Features three brush styles, flood fill, undo/redo, a gallery with JPG export, and full EN/中文 localisation.",
