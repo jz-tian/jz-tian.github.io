@@ -1,8 +1,8 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { personal, workExperience, education, projects, photos, profilePhotos } from "@/lib/data";
 import { withBasePath } from "@/lib/site";
 import { translations, type Lang, type T } from "@/lib/translations";
@@ -53,8 +53,23 @@ function Nav({ t, lang, setLang }: { t: T; lang: Lang; setLang: (l: Lang) => voi
   const cvDownloadName = lang === "de" ? "Lebenslauf_Jiazheng_Tian.pdf" : "cv_Jiazheng_Tian.pdf";
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", fn);
+    let ticking = false;
+
+    const fn = () => {
+      if (ticking) {
+        return;
+      }
+
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        const next = window.scrollY > 50;
+        setScrolled((prev) => (prev === next ? prev : next));
+        ticking = false;
+      });
+    };
+
+    fn();
+    window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
@@ -134,18 +149,19 @@ function Nav({ t, lang, setLang }: { t: T; lang: Lang; setLang: (l: Lang) => voi
 function Hero({ t, lang }: { t: T; lang: Lang }) {
   const cvHref = withBasePath(lang === "de" ? "/cv/Lebenslauf_Jiazheng_Tian.pdf" : "/cv/cv_Jiazheng_Tian.pdf");
   const cvDownloadName = lang === "de" ? "Lebenslauf_Jiazheng_Tian.pdf" : "cv_Jiazheng_Tian.pdf";
-  const ref = useRef<HTMLDivElement>(null);
-  const photoRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: photoRef, offset: ["start 25%", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.12, 1], [1, 1, 0.08]);
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
       <div className="absolute inset-y-0 right-0 w-[40%] pointer-events-none bg-[linear-gradient(to_right,transparent,rgba(0,102,255,0.04))]" />
       <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-white to-transparent pointer-events-none" />
 
-      <motion.div style={{ y, opacity }} className="relative w-full max-w-7xl mx-auto px-6 lg:px-10 pt-22 pb-22">
+      <motion.div
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+        animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+        transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className="relative w-full max-w-7xl mx-auto px-6 lg:px-10 pt-22 pb-22"
+      >
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-10 items-center">
 
           {/* Left — text */}
@@ -210,7 +226,7 @@ function Hero({ t, lang }: { t: T; lang: Lang }) {
           </div>
 
           {/* Right — photo */}
-          <motion.div ref={photoRef} initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}
+          <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="lg:col-span-2 flex justify-center lg:justify-end lg:pt-6">
             <div className="group relative w-72 h-72 md:w-[300px] md:h-[370px] lg:w-full lg:max-w-[390px] lg:h-[455px]">
@@ -263,8 +279,8 @@ function Hero({ t, lang }: { t: T; lang: Lang }) {
       <motion.a
         href="#about"
         initial={{ opacity: 0.85, y: 0 }}
-        animate={{ opacity: 0.85, y: [0, 4, 0] }}
-        transition={{ delay: 0.8, duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+        animate={shouldReduceMotion ? { opacity: 0.85 } : { opacity: 0.85, y: [0, 4, 0] }}
+        transition={shouldReduceMotion ? undefined : { delay: 0.8, duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 inline-flex flex-col items-center gap-1 text-gray-400 hover:text-gray-700 transition-colors duration-200"
       >
         <span className="text-[11px] font-bold uppercase tracking-[0.32em]">Scroll</span>
@@ -484,15 +500,13 @@ function Projects({ t }: { t: T }) {
         <SectionTitle>{t.projects.title}</SectionTitle>
 
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
-          <AnimatePresence mode="wait">
-            {items.map((p, i) => (
-              (() => {
-                const hasPreviewImage = Boolean(p.image);
+          {items.map((p, i) => {
+            const hasPreviewImage = Boolean(p.image);
 
-                return (
+            return (
               <motion.article key={p.title}
-                initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
-                transition={{ delay: i * 0.1, duration: 0.4 }}
+                initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08, duration: 0.32 }}
                 className="group rounded-2xl border border-gray-100 bg-white overflow-hidden hover:border-blue-100 hover:shadow-xl hover:shadow-blue-50 transition-all duration-300 flex flex-col">
                 <div className="h-40 flex items-center justify-center relative overflow-hidden flex-shrink-0"
                   style={{ background: `linear-gradient(135deg, ${ACCENT_LIGHT}, #f8f9ff)` }}>
@@ -537,28 +551,25 @@ function Projects({ t }: { t: T }) {
                   </div>
                 </div>
               </motion.article>
-                );
-              })()
-            ))}
-            <motion.article
-              key="more-to-come"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ delay: items.length * 0.1, duration: 0.4 }}
-              className="rounded-2xl border border-dashed border-gray-200 bg-gray-50/70 min-h-[22rem] flex flex-col items-center justify-center text-center p-6"
-            >
-              <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center mb-6">
-                <span className="text-3xl leading-none text-gray-400">•••</span>
-              </div>
-              <h3 className="text-2xl font-black text-gray-700 mb-2" style={{ fontFamily: TITLE_FONT }}>
-                {t.projects.moreTitle}
-              </h3>
-              <p className="text-gray-400 text-base">
-                {t.projects.moreSubtitle}
-              </p>
-            </motion.article>
-          </AnimatePresence>
+            );
+          })}
+          <motion.article
+            key="more-to-come"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: items.length * 0.08, duration: 0.32 }}
+            className="rounded-2xl border border-dashed border-gray-200 bg-gray-50/70 min-h-[22rem] flex flex-col items-center justify-center text-center p-6"
+          >
+            <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center mb-6">
+              <span className="text-3xl leading-none text-gray-400">•••</span>
+            </div>
+            <h3 className="text-2xl font-black text-gray-700 mb-2" style={{ fontFamily: TITLE_FONT }}>
+              {t.projects.moreTitle}
+            </h3>
+            <p className="text-gray-400 text-base">
+              {t.projects.moreSubtitle}
+            </p>
+          </motion.article>
         </div>
       </div>
     </section>
@@ -590,9 +601,8 @@ function Photography({ t }: { t: T }) {
         <p className="text-gray-500 text-lg -mt-8 mb-12 max-w-xl">{t.photography.subtitle}</p>
 
         <div className="columns-2 sm:columns-2 md:columns-3 gap-3 space-y-3">
-          {realPhotos.map((photo, i) => (
-            <motion.div key={photo.src}
-              variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} custom={i % 4}
+          {realPhotos.map((photo) => (
+            <div key={photo.src}
               className="break-inside-avoid cursor-pointer group relative overflow-hidden rounded-xl"
               onClick={() => openLightbox(photo.src)}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -606,7 +616,7 @@ function Photography({ t }: { t: T }) {
                 </div>
               </div>
               <div className="absolute bottom-0 inset-x-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: ACCENT }} />
-            </motion.div>
+            </div>
           ))}
         </div>
 
