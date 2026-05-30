@@ -140,6 +140,24 @@ export const projects = {
       image: "/projects/aurora-demo.gif",
     },
     {
+      title: "落書き Rakugaki",
+      description:
+        "AI-powered drawing game with a Japanese washi-paper aesthetic. Gemini 2.5 Flash generates a random prompt, you draw it in 120 seconds, then Gemini Vision scores your work and writes a humorous comment. Features three brush styles, flood fill, undo/redo, a gallery with JPG export, and full EN/中文 localisation.",
+      tags: ["Next.js", "TypeScript", "Gemini API", "Canvas API", "Tailwind CSS"],
+      link: "#",
+      github: "https://github.com/jz-tian/rakugaki",
+      image: "/projects/rakugaki-demo.gif",
+    },
+    {
+      title: "Rabbit Garden",
+      description:
+        "A single-page interactive encyclopedia of rabbit breeds. Six breeds peek up from a botanical hero, each clickable to reveal a full profile — origin, temperament, stats, and three AI-generated photos in animated organic blob frames. Built with vanilla HTML/CSS/JS; all imagery generated with Google Imagen 4 and background-removed via a custom BFS flood-fill algorithm.",
+      tags: ["HTML/CSS/JS", "Google Imagen 4", "Node.js", "sharp", "SVG Animation"],
+      link: "https://rabbit-garden.vercel.app",
+      github: "https://github.com/jz-tian/rabbit_garden",
+      image: "/projects/rabbit-garden-demo.gif",
+    },
+    {
       title: "RabattHunter Retail Automation Product",
       description:
         "Developed an end-to-end retail promotions product for major German supermarket chains with automated data ingestion, product categorization, full-text search, and shopping-list export.",

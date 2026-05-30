@@ -146,6 +146,26 @@ function Nav({ t, lang, setLang }: { t: T; lang: Lang; setLang: (l: Lang) => voi
 }
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
+function HeroRoleTitle({ title }: { title: string }) {
+  const [primary, secondary] = title.split(" | ");
+
+  if (!secondary) {
+    return <span className="block">{title}</span>;
+  }
+
+  return (
+    <span className="block">
+      <span>{primary}</span>
+      <span
+        aria-hidden="true"
+        className="mx-[0.18em] hidden h-[0.68em] w-[0.055em] rounded-full align-[-0.04em] sm:inline-block"
+        style={{ background: `linear-gradient(180deg, ${ACCENT}66, rgba(17,24,39,0.22))` }}
+      />
+      <span className="block sm:inline">{secondary}</span>
+    </span>
+  );
+}
+
 function Hero({ t, lang }: { t: T; lang: Lang }) {
   const cvHref = withBasePath(lang === "de" ? "/cv/Lebenslauf_Jiazheng_Tian.pdf" : "/cv/cv_Jiazheng_Tian.pdf");
   const cvDownloadName = lang === "de" ? "Lebenslauf_Jiazheng_Tian.pdf" : "cv_Jiazheng_Tian.pdf";
@@ -178,7 +198,7 @@ function Hero({ t, lang }: { t: T; lang: Lang }) {
               <span className="block">
                 <span style={{ color: ACCENT }}>{personal.name}</span>
               </span>
-              <span className="block">{t.hero.title}</span>
+              <HeroRoleTitle title={t.hero.title} />
             </motion.h1>
 
             <motion.div variants={fadeUp} initial="hidden" animate="show" custom={2}

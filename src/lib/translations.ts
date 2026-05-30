@@ -205,7 +205,7 @@ export const translations: Record<Lang, T> = {
       tab1: "Data & ML",
       tab2: "AI-enabled products",
       liveDemo: "Live Demo",
-      caseStudy: "CV Project",
+      caseStudy: "Project",
       featuredLabel: "Selected Project",
       moreTitle: "More to come",
       moreSubtitle: "New builds in progress",
@@ -233,6 +233,18 @@ export const translations: Record<Lang, T> = {
           description:
             "Engineered a data-integration and decision-support application that combines NOAA SWPC aurora data, cloud cover, geolocation, and 48-hour Kp forecasts on an interactive 3D globe.",
           tags: ["Next.js", "TypeScript", "Three.js", "GLSL"],
+        },
+        {
+          title: "落書き Rakugaki",
+          description:
+            "AI-powered drawing game with a Japanese washi-paper aesthetic. Gemini 2.5 Flash generates a random prompt, you draw it in 120 seconds, then Gemini Vision scores your work and writes a humorous comment. Features three brush styles, flood fill, undo/redo, a gallery with JPG export, and full EN/Chinese localisation.",
+          tags: ["Next.js", "TypeScript", "Gemini API", "Canvas API", "Tailwind CSS"],
+        },
+        {
+          title: "Rabbit Garden",
+          description:
+            "A single-page interactive encyclopedia of rabbit breeds. Six breeds peek up from a botanical hero, each clickable to reveal a full profile with origin, temperament, stats, and AI-generated photos in animated organic frames.",
+          tags: ["HTML/CSS/JS", "Google Imagen 4", "Node.js", "sharp", "SVG Animation"],
         },
         {
           title: "RabattHunter Retail Automation Product",
@@ -382,7 +394,7 @@ export const translations: Record<Lang, T> = {
       tab1: "Daten & ML",
       tab2: "KI-gestützte Produkte",
       liveDemo: "Live Demo",
-      caseStudy: "CV-Projekt",
+      caseStudy: "Projekt",
       featuredLabel: "Ausgewähltes Projekt",
       moreTitle: "Mehr kommt bald",
       moreSubtitle: "Neue Projekte sind in Arbeit",
@@ -410,6 +422,18 @@ export const translations: Record<Lang, T> = {
           description:
             "Entwicklung eines Echtzeit-Trackers mit interaktivem 3D-Globus, NOAA-Datenabruf, Standorterkennung und Ranking geeigneter Beobachtungsorte auf Basis aktueller Sichtbarkeits- und Wetterdaten.",
           tags: ["Next.js", "Three.js", "GLSL", "NOAA SWPC"],
+        },
+        {
+          title: "落書き Rakugaki",
+          description:
+            "KI-gestütztes Zeichenspiel in japanischer Washi-Paper-Ästhetik: Gemini 2.5 Flash generiert zufällige Prompts, die Zeichnung entsteht in 120 Sekunden, und Gemini Vision bewertet das Ergebnis mit humorvollem Kommentar. Enthält drei Pinselstile, Füllwerkzeug, Undo/Redo, Galerie, JPG-Export und EN/中文-Lokalisierung.",
+          tags: ["Next.js", "TypeScript", "Gemini API", "Canvas API", "Tailwind CSS"],
+        },
+        {
+          title: "Rabbit Garden",
+          description:
+            "Interaktive Single-Page-Enzyklopädie zu Kaninchenrassen: sechs Rassen erscheinen im botanischen Hero-Bereich und öffnen klickbare Profile mit Herkunft, Charakter, Kennzahlen und KI-generierten Bildern in animierten organischen Frames.",
+          tags: ["HTML/CSS/JS", "Google Imagen 4", "Node.js", "sharp", "SVG Animation"],
         },
         {
           title: "RabattHunter",
