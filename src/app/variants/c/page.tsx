@@ -168,7 +168,7 @@ function Hero({ t, lang }: { t: T; lang: Lang }) {
           <div className="lg:col-span-3">
             <motion.div variants={fadeUp} initial="hidden" animate="show" custom={0}>
               <p className="text-xs font-bold uppercase tracking-[0.22em] mb-6" style={{ color: ACCENT }}>
-                Data Science · AI · Apps
+                {t.hero.eyebrow}
               </p>
             </motion.div>
 
@@ -178,13 +178,13 @@ function Hero({ t, lang }: { t: T; lang: Lang }) {
               <span className="block">
                 <span style={{ color: ACCENT }}>{personal.name}</span>
               </span>
-              <span className="block">Data Analyst & Vibe Coder</span>
+              <span className="block">{t.hero.title}</span>
             </motion.h1>
 
             <motion.div variants={fadeUp} initial="hidden" animate="show" custom={2}
               className="flex items-center gap-3 mb-4 text-sm text-gray-500">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 font-medium shadow-sm">
-                <FiMapPin size={12} style={{ color: ACCENT }} /> {personal.location}
+                <FiMapPin size={12} style={{ color: ACCENT }} /> {t.hero.location}
               </span>
             </motion.div>
 
@@ -314,11 +314,7 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 
 // ─── About ────────────────────────────────────────────────────────────────────
 function About({ t }: { t: T }) {
-  const capabilityGroups = [
-    { label: t.skills.groups[0], items: ["Python", "SQL", "EDA", "NLP", "GenAI"] },
-    { label: t.skills.groups[1], items: ["Claude Code", "Next.js", "Node.js", "TypeScript", "Tailwind CSS"] },
-    { label: "Tools", items: ["Git", "Spark", "Power BI", "AWS"] },
-  ];
+  const capabilityGroups = t.skills.capabilityGroups;
 
   return (
     <section id="about" className="py-24 bg-white border-t border-gray-100">
@@ -362,7 +358,7 @@ function About({ t }: { t: T }) {
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
               className="p-6 rounded-2xl border border-gray-100 bg-white">
               <div className="flex items-center gap-3 mb-5">
-                <p className="text-xs font-bold uppercase tracking-widest text-gray-400">Capabilities</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-gray-400">{t.skills.capabilityLabel}</p>
                 <div className="h-px flex-1 bg-gray-200" />
               </div>
               <div className="space-y-5">
@@ -409,7 +405,7 @@ function Journey({ t }: { t: T }) {
     <section id="journey" className="py-24 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <SectionLabel num="02" label={`${t.experience.sectionLabel} / ${t.education.sectionLabel}`} />
-        <SectionTitle>Professional Experience & Education</SectionTitle>
+        <SectionTitle>{t.experience.title} & {t.education.title}</SectionTitle>
 
         <div className="grid xl:grid-cols-[minmax(0,1fr)_1px_minmax(0,1fr)] gap-10 xl:gap-12 items-start">
           <div className="space-y-6">
@@ -419,7 +415,7 @@ function Journey({ t }: { t: T }) {
               </div>
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.22em] text-gray-400">{t.experience.sectionLabel}</p>
-                <h3 className="text-2xl font-black tracking-tight text-gray-900" style={{ fontFamily: TITLE_FONT }}>Professional Experience</h3>
+                <h3 className="text-2xl font-black tracking-tight text-gray-900" style={{ fontFamily: TITLE_FONT }}>{t.experience.title}</h3>
               </div>
             </div>
 
@@ -434,11 +430,11 @@ function Journey({ t }: { t: T }) {
                   <div className="flex flex-col items-start sm:items-end gap-2 flex-shrink-0">
                     <span className="inline-flex items-center gap-1.5 text-xs text-gray-400 font-medium px-0 py-0 bg-transparent rounded-none sm:px-3 sm:py-1 sm:bg-gray-50 sm:rounded-full">
                       <span className="inline-flex w-4 justify-center"><FiBriefcase size={11} /></span>
-                      {item.period}
+                      {t.experience.items[i]?.period ?? item.period}
                     </span>
                     <span className="text-xs text-gray-400 flex items-center gap-1 justify-start sm:justify-end">
                       <span className="inline-flex w-4 justify-center"><FiMapPin size={10} /></span>
-                      {item.location}
+                      {t.experience.items[i]?.location ?? item.location}
                     </span>
                   </div>
                 </div>
@@ -456,7 +452,7 @@ function Journey({ t }: { t: T }) {
               </div>
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.22em] text-gray-400">{t.education.sectionLabel}</p>
-                <h3 className="text-2xl font-black tracking-tight text-gray-900" style={{ fontFamily: TITLE_FONT }}>Education</h3>
+                <h3 className="text-2xl font-black tracking-tight text-gray-900" style={{ fontFamily: TITLE_FONT }}>{t.education.title}</h3>
               </div>
             </div>
 
@@ -466,16 +462,16 @@ function Journey({ t }: { t: T }) {
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
                   <div>
                     <h4 className="font-bold text-gray-900 text-lg leading-tight mb-2" style={{ fontFamily: TITLE_FONT }}>{t.education.items[i]?.degree ?? item.degree}</h4>
-                    <p className="font-semibold text-sm" style={{ color: ACCENT }}>{item.institution}</p>
+                    <p className="font-semibold text-sm" style={{ color: ACCENT }}>{t.education.items[i]?.institution ?? item.institution}</p>
                   </div>
                   <div className="flex flex-col items-start sm:items-end gap-2 flex-shrink-0">
                     <span className="inline-flex items-center gap-1.5 text-xs text-gray-400 font-medium px-0 py-0 bg-transparent rounded-none border-0 sm:px-3 sm:py-1 sm:bg-white sm:rounded-full sm:border sm:border-gray-100">
                       <span className="inline-flex w-4 justify-center"><FiBook size={11} /></span>
-                      {item.period}
+                      {t.education.items[i]?.period ?? item.period}
                     </span>
                     <span className="inline-flex items-center gap-1.5 text-xs text-gray-400 font-medium px-0 py-0 bg-transparent rounded-none border-0 sm:px-3 sm:py-1 sm:bg-white sm:rounded-full sm:border sm:border-gray-100">
                       <span className="inline-flex w-4 justify-center"><FiMapPin size={10} /></span>
-                      {item.location}
+                      {t.education.items[i]?.location ?? item.location}
                     </span>
                   </div>
                 </div>
@@ -491,7 +487,7 @@ function Journey({ t }: { t: T }) {
 
 // ─── Projects ─────────────────────────────────────────────────────────────────
 function Projects({ t }: { t: T }) {
-  const items = projects.vibeCoding;
+  const items = [...projects.data, ...projects.vibeCoding];
 
   return (
     <section id="projects" className="py-24 bg-white border-t border-gray-100">
@@ -502,6 +498,10 @@ function Projects({ t }: { t: T }) {
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
           {items.map((p, i) => {
             const hasPreviewImage = Boolean(p.image);
+            const copy = t.projects.items[i];
+            const liveHref = p.link && p.link !== "#" ? p.link : "";
+            const githubHref = p.github && p.github !== "#" ? p.github : "";
+            const tags = copy?.tags ?? p.tags;
 
             return (
               <motion.article key={p.title}
@@ -526,28 +526,34 @@ function Projects({ t }: { t: T }) {
                   <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute left-5 top-5 inline-flex w-fit items-center gap-2 rounded-full border border-blue-100 bg-white/92 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.24em] text-blue-600 shadow-sm backdrop-blur-sm">
                     <FiCode size={12} />
-                    Featured Build
+                    {t.projects.featuredLabel}
                   </div>
                 </div>
 
                 <div className="p-5 flex flex-col flex-1">
                   <div className="flex flex-wrap gap-1.5 mb-3">
-                    {p.tags.map((tag) => (
+                    {tags.map((tag) => (
                       <span key={tag} className="text-xs px-2.5 py-1 rounded-full font-medium"
                         style={{ background: ACCENT_LIGHT, color: ACCENT, fontFamily: "var(--font-jetbrains), monospace" }}>
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <h3 className="text-base font-bold text-gray-900 mb-2" style={{ fontFamily: TITLE_FONT }}>{p.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-4">{p.description}</p>
+                  <h3 className="text-base font-bold text-gray-900 mb-2" style={{ fontFamily: TITLE_FONT }}>{copy?.title ?? p.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-4">{copy?.description ?? p.description}</p>
                   <div className="flex items-center gap-4 pt-3 border-t border-gray-100">
-                    <a href={p.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-sm font-semibold transition-colors hover:underline" style={{ color: ACCENT }}>
-                      {t.projects.liveDemo} <FiArrowUpRight size={13} />
-                    </a>
-                    <a href={p.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-sm font-medium text-gray-400 hover:text-gray-700 transition-colors">
-                      <FiGithub size={13} /> GitHub
-                    </a>
+                    {liveHref ? (
+                      <a href={liveHref} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-sm font-semibold transition-colors hover:underline" style={{ color: ACCENT }}>
+                        {t.projects.liveDemo} <FiArrowUpRight size={13} />
+                      </a>
+                    ) : (
+                      <span className="text-sm font-semibold" style={{ color: ACCENT }}>{t.projects.caseStudy}</span>
+                    )}
+                    {githubHref && (
+                      <a href={githubHref} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-sm font-medium text-gray-400 hover:text-gray-700 transition-colors">
+                        <FiGithub size={13} /> GitHub
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.article>

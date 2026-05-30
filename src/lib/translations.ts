@@ -16,6 +16,9 @@ export interface T {
     resume: string;
   };
   hero: {
+    eyebrow: string;
+    title: string;
+    location: string;
     badge: string;
     tagline: string;
     cta1: string;
@@ -37,16 +40,18 @@ export interface T {
     sectionLabel: string;
     title: string;
     groups: string[];
+    capabilityLabel: string;
+    capabilityGroups: { label: string; items: string[] }[];
   };
   experience: {
     sectionLabel: string;
     title: string;
-    items: { title: string; description: string }[];
+    items: { title: string; period: string; location: string; description: string }[];
   };
   education: {
     sectionLabel: string;
     title: string;
-    items: { degree: string; description: string }[];
+    items: { degree: string; institution: string; period: string; location: string; description: string }[];
   };
   projects: {
     sectionLabel: string;
@@ -54,8 +59,11 @@ export interface T {
     tab1: string;
     tab2: string;
     liveDemo: string;
+    caseStudy: string;
+    featuredLabel: string;
     moreTitle: string;
     moreSubtitle: string;
+    items: { title: string; description: string; tags: string[] }[];
   };
   photography: {
     sectionLabel: string;
@@ -93,82 +101,146 @@ export const translations: Record<Lang, T> = {
       resume: "Resume",
     },
     hero: {
+      eyebrow: "Business · Data · Automation · AI",
+      title: "Data Analyst | AI & Data Transformation",
+      location: "Passau, Germany",
       badge: "Open to new connections",
-      tagline: "I turn data into insights and ideas into apps — occasionally from behind a camera.",
-      cta1: "View My Work",
+      tagline:
+        "I translate business questions into scalable analytics workflows, decision-support outputs, and AI-enabled ways of working.",
+      cta1: "View Selected Projects",
       cta2: "Get In Touch",
-      statExperienceLabel: "Experience",
-      statExperienceUnit: "yrs",
-      statProjectsLabel: "ML Projects",
-      statProjectsUnit: "built",
+      statExperienceLabel: "Current role since",
+      statExperienceUnit: "2022",
+      statProjectsLabel: "Selected projects",
+      statProjectsUnit: "5",
     },
     about: {
       sectionLabel: "About",
-      title: "A bit about me",
+      title: "AI & Data Transformation, grounded in business analytics",
       paragraphs: [
-        "I'm a Data Analyst and Data Scientist with a background in information systems, working across machine learning, analytics, and business intelligence. At Acxiom, I build predictive models and scalable data workflows that help clients make better decisions and turn complex datasets into practical business value.",
-        "Lately, I've become especially interested in vibe coding: using AI tools to turn ideas into working apps quickly. I enjoy building things that are practical, fast to test, and shaped through experimentation, combining analytical thinking with a more creative way of making software.",
-        "Outside of work, I'm into photography, languages, and strategy-driven hobbies like tennis and games. Those interests sharpen how I observe details, adapt to new situations, and approach problems from different angles.",
+        "I'm an AI & Data Transformation professional with an M.Sc. in Information Systems and experience across customer analytics, predictive modeling, machine learning, workflow modernization, and AI-assisted solution development.",
+        "At Acxiom, I translate client marketing and customer-data questions into scalable analytics workflows, decision-support outputs, and stakeholder-ready recommendations using Python, SAS, SQL, PySpark, and modern ML methods.",
+        "A recurring theme in my work is understanding a system, identifying bottlenecks, improving the workflow, and making the result easier for teams and stakeholders to use.",
+        "I also build practical tools and prototypes with Next.js, TypeScript, Claude Code, Codex, and LLM-assisted workflows to explore how organizations can adopt AI-enabled ways of working.",
+        "Outside of data and AI, photography, languages, tennis, and games keep my attention trained on perspective, adaptation, and strategy.",
       ],
       stats: [
-        { value: "5+", label: "Years in data" },
-        { value: "5+", label: "Apps built" },
+        { value: "M.Sc.", label: "Information Systems" },
+        { value: "2022", label: "Current role since" },
         { value: "5", label: "Languages" },
-        { value: "∞", label: "Curiosity" },
+        { value: "AI", label: "Workflow adoption" },
       ],
       whatIDo: "What I do",
-      doItems: ["Data Science & Machine Learning", "Vibe Coding with Claude Code", "Hobby Photography"],
+      doItems: ["Business-Tech Translation", "Scalable Analytics Workflows", "AI-assisted Solution Development"],
     },
     skills: {
       sectionLabel: "Skills",
       title: "Tools of the trade",
-      groups: ["Data & Machine Learning", "Vibe Coding", "Tools & Others"],
+      groups: [
+        "Data & Analytics Transformation",
+        "AI Adoption & GenAI Workflows",
+        "Business-Tech Translation",
+        "Product & Web Engineering",
+      ],
+      capabilityLabel: "Capabilities",
+      capabilityGroups: [
+        { label: "Data & Analytics Transformation", items: ["Python", "SAS", "SQL", "PySpark", "scikit-learn"] },
+        { label: "AI Adoption & GenAI Workflows", items: ["Claude Code", "Codex", "LLM tooling", "Prompt iteration"] },
+        { label: "Business-Tech Translation", items: ["Decision support", "Recommendations", "Process optimization", "Power BI"] },
+        { label: "Product & Web Engineering", items: ["Next.js", "TypeScript", "React", "Tailwind CSS"] },
+      ],
     },
     experience: {
       sectionLabel: "Work Experience",
-      title: "Where I've worked",
+      title: "Professional Experience",
       items: [
         {
           title: "Data Analyst",
+          period: "Feb. 2022 – Present",
+          location: "Munich, Germany",
           description:
-            "Build predictive models from customer data, including logistic-model based address selection strategies, to improve campaign targeting and marketing effectiveness. Deliver customer structure analysis and data enrichment workflows using SAS and Python, support the transition of analytical workflows toward PySpark-based solutions, and turn findings into clear recommendations for clients and internal stakeholders.",
+            "Translate client marketing and customer-data questions into scalable analytics workflows and decision-ready recommendations. Build logistic-model based address selection strategies to support campaign targeting and marketing effectiveness, develop SAS/Python customer structure and data enrichment workflows, support modernization toward PySpark-based processing, and contribute to AI-assisted development adoption through coding agents and workflow automation.",
         },
         {
-          title: "Machine Learning Research — Master Thesis",
+          title: "Master Thesis Student in Machine Learning",
+          period: "Jun. 2021 – Jan. 2022",
+          location: "Munich, Germany",
           description:
-            "Built an anomaly detection pipeline for CT scanner log data, combining supervised and unsupervised methods. Used SHAP-based explainability to turn model outputs into insights that supported predictive maintenance.",
+            "Developed explainable anomaly detection for CT scanner log data in an industrial healthcare setting. Built supervised and unsupervised ML models, used SHAP explainability to translate model behavior for business and technical stakeholders, and connected results to predictive-maintenance and after-sales service quality.",
         },
         {
-          title: "Working Student — Data Science, Sales Operations",
+          title: "Working Student Data Scientist",
+          period: "Nov. 2019 – Dec. 2021",
+          location: "Munich, Germany",
           description:
-            "Maintained and enriched CRM data, built visualizations with Python tools, and delivered dashboards that gave the sales team clearer visibility into pipeline performance and conversion trends.",
+            "Managed and enriched customer and sales datasets for reporting quality and sales-operations decision support.",
         },
       ],
     },
     education: {
       sectionLabel: "Education",
-      title: "Academic background",
+      title: "Education",
       items: [
         {
           degree: "M.Sc. Information Systems",
+          institution: "Technical University of Munich",
+          period: "Oct. 2018 – Jan. 2022",
+          location: "Munich, Germany",
           description:
-            "Focused on machine learning, business analytics, and database systems, with a thesis on industrial anomaly detection completed in collaboration with Siemens.",
+            "Focused on machine learning, business analytics, and database systems, with a thesis on industrial anomaly detection in collaboration with Siemens.",
         },
         {
           degree: "B.Sc. Information Systems",
+          institution: "Communication University of China",
+          period: "Sep. 2014 – Jul. 2018",
+          location: "Beijing, China",
           description:
-            "Built a strong foundation in data management, information systems, and applied analytics.",
+            "Built a foundation in data management, information systems, and applied analytics.",
         },
       ],
     },
     projects: {
       sectionLabel: "Projects",
-      title: "Things I've built",
+      title: "Selected projects from data, AI, and product work",
       tab1: "Data & ML",
-      tab2: "Vibe Coding",
+      tab2: "AI-enabled products",
       liveDemo: "Live Demo",
+      caseStudy: "CV Project",
+      featuredLabel: "Selected Project",
       moreTitle: "More to come",
       moreSubtitle: "New builds in progress",
+      items: [
+        {
+          title: "Explainable CT Scanner Anomaly Detection",
+          description:
+            "Built an anomaly detection pipeline for CT scanner log data and used SHAP explainability to turn model behavior into predictive-maintenance insights.",
+          tags: ["Python", "PyTorch", "scikit-learn", "SHAP"],
+        },
+        {
+          title: "Customer Selection & Marketing Optimization",
+          description:
+            "Developed logistic-regression based customer selection logic and data enrichment workflows for scalable direct-marketing optimization.",
+          tags: ["Python", "SAS", "Logistic Regression"],
+        },
+        {
+          title: "Research Intelligence Platform",
+          description:
+            "Built a decision-support workflow that aggregates Google Trends, news, YouTube signals, sentiment analysis, and keyword visualization to accelerate trend discovery and topic research.",
+          tags: ["Next.js", "TypeScript", "Recharts", "Tailwind CSS"],
+        },
+        {
+          title: "Aurora Visibility Tracker",
+          description:
+            "Engineered a data-integration and decision-support application that combines NOAA SWPC aurora data, cloud cover, geolocation, and 48-hour Kp forecasts on an interactive 3D globe.",
+          tags: ["Next.js", "TypeScript", "Three.js", "GLSL"],
+        },
+        {
+          title: "RabattHunter Retail Automation Product",
+          description:
+            "Developed an end-to-end retail promotions product for major German supermarket chains with automated data ingestion, product categorization, full-text search, and shopping-list export.",
+          tags: ["Next.js", "React 19", "Turso", "SQLite"],
+        },
+      ],
     },
     photography: {
       sectionLabel: "Photography",
@@ -178,7 +250,8 @@ export const translations: Record<Lang, T> = {
     contact: {
       sectionLabel: "Contact",
       title: "Let's talk",
-      intro: "Have a project in mind, want to explore a collaboration, or just want to talk about data and code? I'm always happy to connect.",
+      intro:
+        "Have a project in mind, want to modernize an analytical workflow, or want to explore AI-enabled ways of working? I'm happy to connect.",
       nameLabel: "Your name",
       namePlaceholder: "Jiazheng Tian",
       emailLabel: "Email address",
@@ -196,7 +269,7 @@ export const translations: Record<Lang, T> = {
   de: {
     nav: {
       about: "Über mich",
-      skills: "Fähigkeiten",
+      skills: "Kenntnisse",
       experience: "Erfahrung",
       education: "Ausbildung",
       projects: "Projekte",
@@ -205,82 +278,146 @@ export const translations: Record<Lang, T> = {
       resume: "Lebenslauf",
     },
     hero: {
-      badge: "Offen für neue Möglichkeiten",
-      tagline: "Ich verwandle Daten in Erkenntnisse und Ideen in Apps — gelegentlich auch durch eine Kameralinse.",
-      cta1: "Meine Projekte",
+      eyebrow: "Business · Daten · Automatisierung · KI",
+      title: "Data Analyst | AI & Data Transformation",
+      location: "Passau, Deutschland",
+      badge: "Offen für neue Kontakte",
+      tagline:
+        "Ich übersetze Business-Fragestellungen in skalierbare Analyseprozesse, entscheidungsreife Ergebnisse und KI-gestützte Arbeitsweisen.",
+      cta1: "Ausgewählte Projekte",
       cta2: "Kontakt aufnehmen",
-      statExperienceLabel: "Erfahrung",
-      statExperienceUnit: "J.",
-      statProjectsLabel: "ML-Projekte",
-      statProjectsUnit: "gebaut",
+      statExperienceLabel: "Aktuelle Rolle seit",
+      statExperienceUnit: "2022",
+      statProjectsLabel: "Ausgewählte Projekte",
+      statProjectsUnit: "5",
     },
     about: {
       sectionLabel: "Über mich",
-      title: "Ein bisschen über mich",
+      title: "KI- und datengetriebene Transformation mit Business-Fokus",
       paragraphs: [
-        "Ich arbeite als Data Analyst und Data Scientist mit einem Hintergrund in Informationssystemen an der Schnittstelle von maschinellem Lernen, Analytics und Business Intelligence. Bei Acxiom entwickle ich prädiktive Modelle und skalierbare Datenworkflows, die Kunden helfen, bessere Entscheidungen zu treffen und komplexe Datensätze in praktischen Geschäftswert zu übersetzen.",
-        "Besonders spannend finde ich derzeit Vibe Coding: den Einsatz von KI-Tools, um Ideen schnell in funktionierende Apps zu verwandeln. Mich reizt vor allem, Dinge pragmatisch zu bauen, schnell zu testen und sie durch Experimentieren Schritt für Schritt besser zu machen.",
-        "Außerhalb der Arbeit interessiere ich mich für Fotografie, Sprachen und strategische Hobbys wie Tennis und Games. Diese Interessen prägen auch, wie ich Details wahrnehme, mich auf Neues einstelle und Probleme aus unterschiedlichen Perspektiven angehe.",
+        "Ich bin ein AI- und datengetriebener Business-Analytics-Spezialist mit M.Sc. in Wirtschaftsinformatik und Erfahrung in Customer Analytics, Machine Learning, Prozessoptimierung und KI-gestützten Workflows.",
+        "Bei Acxiom übersetze ich Business- und Marketing-Fragestellungen in skalierbare Analyseprozesse, datengetriebene Entscheidungsgrundlagen und praxisnahe Empfehlungen für Kunden und interne Stakeholder.",
+        "Ein wiederkehrendes Muster in meiner Arbeit ist: Systeme verstehen, Engpässe erkennen, Workflows verbessern und Ergebnisse so aufbereiten, dass Teams besser damit arbeiten können.",
+        "Zusätzlich entwickle ich praktische Tools und Prototypen mit Next.js, TypeScript, Claude Code, Codex und LLM-gestützten Workflows, um moderne KI-gestützte Arbeitsweisen greifbar zu machen.",
+        "Außerhalb von Daten und KI halten Fotografie, Sprachen, Tennis und Games meinen Blick für Perspektive, Anpassung und Strategie wach.",
       ],
       stats: [
-        { value: "5+", label: "Jahre Erfahrung" },
-        { value: "5+", label: "Apps gebaut" },
+        { value: "M.Sc.", label: "Wirtschaftsinformatik" },
+        { value: "2022", label: "Aktuelle Rolle seit" },
         { value: "5", label: "Sprachen" },
-        { value: "∞", label: "Neugier" },
+        { value: "KI", label: "Workflow-Adoption" },
       ],
       whatIDo: "Was ich mache",
-      doItems: ["Data Science & Maschinelles Lernen", "Vibe Coding mit Claude Code", "Hobbyfotografie"],
+      doItems: ["Business-Tech-Übersetzung", "Skalierbare Analyse-Workflows", "KI-gestützte Toolentwicklung"],
     },
     skills: {
-      sectionLabel: "Fähigkeiten",
-      title: "Werkzeuge des Fachs",
-      groups: ["Daten & Maschinelles Lernen", "Vibe Coding", "Tools & Sonstiges"],
+      sectionLabel: "Kenntnisse",
+      title: "Werkzeuge und Schwerpunkte",
+      groups: [
+        "Datenanalyse & Machine Learning",
+        "KI & Workflow-Automatisierung",
+        "Business & Stakeholder-Kommunikation",
+        "Produkt- & Toolentwicklung",
+      ],
+      capabilityLabel: "Kenntnisse",
+      capabilityGroups: [
+        { label: "Datenanalyse & Machine Learning", items: ["Python", "SAS", "SQL", "PySpark", "scikit-learn"] },
+        { label: "KI & Workflow-Automatisierung", items: ["Claude Code", "Codex", "LLM-Workflows", "Prompt-Iteration"] },
+        { label: "Business & Stakeholder-Kommunikation", items: ["Empfehlungen", "Prozessoptimierung", "Marketing Analytics", "Power BI"] },
+        { label: "Produkt- & Toolentwicklung", items: ["Next.js", "TypeScript", "React", "Tailwind CSS"] },
+      ],
     },
     experience: {
-      sectionLabel: "Berufserfahrung",
-      title: "Wo ich gearbeitet habe",
+      sectionLabel: "Berufliche Erfahrung",
+      title: "Berufliche Erfahrung",
       items: [
         {
-          title: "Data Scientist/Data Analyst",
+          title: "Data Analyst",
+          period: "Feb. 2022 – heute",
+          location: "München, Deutschland",
           description:
-            "Ich entwickle prädiktive Modelle auf Basis von Kundendaten, darunter logistische Modelle für Adressselektionsstrategien, um Kampagnen-Targeting und Marketingwirkung zu verbessern. Mit SAS und Python liefere ich Kundenstrukturanalysen und Datenanreicherungs-Workflows, unterstütze die Weiterentwicklung analytischer Workflows in Richtung PySpark-basierter Lösungen und übersetze Ergebnisse in klare Empfehlungen für Kunden und interne Stakeholder.",
+            "Übersetzung von Business- und Marketing-Fragestellungen in analytische Lösungen für Customer Analytics, Zielgruppenstrategie und datengetriebene Kampagnenentscheidungen. Entwicklung prädiktiver Modelle und logistischer Selektionsmodelle, Aufbau von Kundenstrukturanalysen und Datenanreicherungs-Workflows mit SAS und Python, Modernisierung bestehender Analyse-Workflows in Richtung PySpark und Beitrag zur teamweiten Einführung KI-gestützter Entwicklung.",
         },
         {
-          title: "Machine-Learning-Forschung — Masterarbeit",
+          title: "Masterarbeit in Machine Learning",
+          period: "Jun. 2021 – Jan. 2022",
+          location: "München, Deutschland",
           description:
-            "Entwicklung einer Anomalieerkennungspipeline für Logdaten von CT-Scannern unter Kombination überwachter und unüberwachter Verfahren. Mit SHAP-basierter Modellerklärung wurden verwertbare Erkenntnisse für Predictive Maintenance abgeleitet.",
+            "Entwicklung von ML-Ansätzen zur Anomalieerkennung in CT-Protokolldaten zur Unterstützung von Predictive-Maintenance- und Servicefragestellungen. Aufbau überwachter und unüberwachter Modelle sowie Einsatz von SHAP und Explainable AI zur Übersetzung von Modellresultaten in nachvollziehbare Erkenntnisse für technische und Business-Stakeholder.",
         },
         {
-          title: "Werkstudent — Data Science, Vertrieb",
+          title: "Werkstudent Data Scientist",
+          period: "Nov. 2019 – Dez. 2021",
+          location: "München, Deutschland",
           description:
-            "Pflege und Anreicherung der CRM-Datenbank, Erstellung von Visualisierungen mit Python-Tools sowie Aufbau von Dashboards, die dem Vertrieb mehr Transparenz über Pipeline-Performance und Konversionsraten gaben.",
+            "Pflege und Anreicherung von CRM- und Vertriebsdaten sowie Erstellung von Visualisierungen und Dashboards mit Python zur Verbesserung von Datenqualität, Pipeline-Transparenz und Reporting für Vertriebs- und Sales-Operations-Teams.",
         },
       ],
     },
     education: {
-      sectionLabel: "Ausbildung",
-      title: "Akademischer Hintergrund",
+      sectionLabel: "Akademischer Werdegang",
+      title: "Akademischer Werdegang",
       items: [
         {
-          degree: "M.Sc. Informationssysteme",
+          degree: "M.Sc. Wirtschaftsinformatik",
+          institution: "Technische Universität München",
+          period: "Okt. 2018 – Jan. 2022",
+          location: "München, Deutschland",
           description:
             "Schwerpunkte in Machine Learning, Business Analytics und Datenbanksystemen; Abschlussarbeit zur industriellen Anomalieerkennung in Zusammenarbeit mit Siemens.",
         },
         {
-          degree: "B.Sc. Informationssysteme",
+          degree: "B.Sc. Information Systems",
+          institution: "Communication University of China",
+          period: "Sep. 2014 – Jul. 2018",
+          location: "Beijing, China",
           description:
-            "Solide Grundlage in Datenmanagement, Informationssystemen und angewandter Analytik.",
+            "Grundlage in Datenmanagement, Informationssystemen und angewandter Analytik.",
         },
       ],
     },
     projects: {
       sectionLabel: "Projekte",
-      title: "Was ich gebaut habe",
+      title: "Ausgewählte Projekte aus Daten, KI und Produktentwicklung",
       tab1: "Daten & ML",
-      tab2: "Vibe Coding",
+      tab2: "KI-gestützte Produkte",
       liveDemo: "Live Demo",
+      caseStudy: "CV-Projekt",
+      featuredLabel: "Ausgewähltes Projekt",
       moreTitle: "Mehr kommt bald",
       moreSubtitle: "Neue Projekte sind in Arbeit",
+      items: [
+        {
+          title: "Anomalieerkennung für CT-Geräte",
+          description:
+            "Entwicklung einer Explainable-AI-Pipeline zur Anomalieerkennung auf Basis von CT-Protokolldaten mit SHAP-gestützter Interpretierbarkeit für Predictive Maintenance, Ursachenanalyse und Serviceoptimierung.",
+          tags: ["Python", "PyTorch", "scikit-learn", "SHAP"],
+        },
+        {
+          title: "Marketingmodell & Adressselektion",
+          description:
+            "Entwicklung logistischer Selektionslogiken und datengetriebener Anreicherungs-Workflows zur Übersetzung von Marketingzielen in Zielgruppenstrategien und datenbasierte Kampagnenentscheidungen.",
+          tags: ["Python", "SAS", "logistische Regression"],
+        },
+        {
+          title: "Trend- und Research-Intelligence-Plattform",
+          description:
+            "Aufbau einer Research-Plattform zur Aggregation von Trendsignalen, Nachrichten, YouTube-Signalen, Sentiment-Analyse und Keyword-Visualisierung zur Beschleunigung von Themenrecherche und Trend Discovery.",
+          tags: ["Next.js", "TypeScript", "Recharts", "Vercel"],
+        },
+        {
+          title: "Aurora Live Tracker",
+          description:
+            "Entwicklung eines Echtzeit-Trackers mit interaktivem 3D-Globus, NOAA-Datenabruf, Standorterkennung und Ranking geeigneter Beobachtungsorte auf Basis aktueller Sichtbarkeits- und Wetterdaten.",
+          tags: ["Next.js", "Three.js", "GLSL", "NOAA SWPC"],
+        },
+        {
+          title: "RabattHunter",
+          description:
+            "Aufbau eines Retail-Automation-Produkts für deutsche Supermarktangebote mit Aggregation offizieller Händlerdaten, automatischer Kategorisierung, Volltextsuche und persistenter Einkaufsliste für wiederkehrende Preis- und Angebotsanalysen.",
+          tags: ["Next.js", "React 19", "Turso", "SQLite"],
+        },
+      ],
     },
     photography: {
       sectionLabel: "Fotografie",
@@ -290,7 +427,8 @@ export const translations: Record<Lang, T> = {
     contact: {
       sectionLabel: "Kontakt",
       title: "Lass uns reden",
-      intro: "Haben Sie ein Projekt im Sinn, möchten eine Zusammenarbeit erkunden oder einfach über Daten und Code sprechen? Ich freue mich immer über neue Kontakte.",
+      intro:
+        "Haben Sie ein Projekt im Sinn, möchten einen analytischen Workflow modernisieren oder KI-gestützte Arbeitsweisen erkunden? Ich freue mich über neue Kontakte.",
       nameLabel: "Ihr Name",
       namePlaceholder: "Jiazheng Tian",
       emailLabel: "E-Mail-Adresse",

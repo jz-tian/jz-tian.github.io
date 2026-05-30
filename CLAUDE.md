@@ -36,11 +36,11 @@ Variants A, B, C2, C3 exist as design explorations but are not the primary focus
 ## Content Source of Truth
 All English content lives in **`src/lib/data.ts`**:
 - `personal` — name, title, email, linkedin, github, location, cvFile
-- `about` — paragraphs (5 total, includes languages + tennis/games paragraph)
+- `about` — English AI & Data Transformation profile paragraphs
 - `workExperience` — 3 entries (Acxiom, Siemens, Fujitsu) — **separate from education**
 - `education` — 2 entries (TUM M.Sc., CUC B.Sc.) — **separate from workExperience**
-- `skills` — `{ data, ml, vibeCoding, tools }`
-- `projects` — `{ data: [...], vibeCoding: [...] }`
+- `skills` — `{ data, ai, business, engineering }`
+- `projects` — selected CV projects split into `{ data: [...], vibeCoding: [...] }`
 - `photos` — 12 real photos from `/public/photos/` (all DSC*.JPG)
 - `profilePhoto` — `/profile.JPG`
 
@@ -116,7 +116,7 @@ const fadeUp = {
 
 ## Personal Details
 - **Name**: Jiazheng Tian
-- **Title**: Data Scientist & Vibe Coder
+- **Title**: Data Analyst | AI & Data Transformation
 - **Location**: Passau, Germany
 - **Email**: jiazheng.tian@outlook.com
 - **LinkedIn**: https://www.linkedin.com/in/jiazheng-tian-07a05a178/

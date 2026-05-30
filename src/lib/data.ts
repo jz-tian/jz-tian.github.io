@@ -5,22 +5,22 @@
 export const personal = {
   name: "Jiazheng Tian",
   initials: "JT",
-  title: "Data Scientist & Vibe Coder",
-  tagline: "I turn data into insights and ideas into apps — occasionally from behind a camera.",
+  title: "Data Analyst | AI & Data Transformation",
+  tagline:
+    "I translate business questions into scalable analytics workflows, decision-support outputs, and AI-enabled ways of working.",
   email: "jiazheng.tian@outlook.com",
   linkedin: "https://www.linkedin.com/in/jiazheng-tian-07a05a178/",
   github: "https://github.com/jz-tian",
   location: "Passau, Germany",
-  cvFile: "/CV_Jiazheng_Tian.pdf",
+  cvFile: "/cv/cv_Jiazheng_Tian.pdf",
 };
 
 export const about = {
   paragraphs: [
-    "I'm a Data Analyst and Data Scientist with a background in information systems, working at the intersection of machine learning, analytics, and business intelligence. At Acxiom, I build predictive models and scalable data pipelines that help clients make better marketing decisions and turn complex data into practical business value.",
-    "What excites me most right now is how AI has transformed the way we build. I've become deeply interested in vibe coding, using modern AI tools to turn ideas and even vague \"what if\" thoughts into working applications within hours. You no longer need perfect coding skills to create something meaningful. If you can imagine it and are willing to experiment, you can build it. That mindset of daring to think and then making it real is what drives me.",
-    "Outside of data and development, I'm a hobby photographer drawn to landscapes, light, and quiet moments. Photography sharpens my sense for detail and perspective, qualities that carry over into my analytical work.",
-    "I'm fluent in Chinese, English, and German, with basic knowledge of Japanese and French. I genuinely enjoy learning languages and exploring different cultures, which continues to shape how I think and collaborate.",
-    "When I'm not building or learning, you'll likely find me on a tennis court or immersed in a good game. I enjoy both for the mix of strategy, focus, and creativity they require.",
+    "I'm an AI & Data Transformation professional with an M.Sc. in Information Systems and experience across customer analytics, predictive modeling, machine learning, workflow modernization, and AI-assisted solution development.",
+    "At Acxiom, I translate client marketing and customer-data questions into scalable analytics workflows, decision-support outputs, and stakeholder-ready recommendations using Python, SAS, SQL, PySpark, and modern ML methods.",
+    "I actively build practical tools and prototypes with Next.js, TypeScript, Claude Code, Codex, and LLM-assisted workflows to explore how teams can adopt AI-enabled ways of working.",
+    "Outside of data and AI, I enjoy photography, languages, tennis, and games because they keep my attention trained on perspective, adaptation, and strategy.",
   ],
 };
 
@@ -34,86 +34,87 @@ export const languages = [
 
 export const skills = {
   data: [
-    "Python", "NumPy", "Pandas", "PyTorch", "Scikit-learn",
-    "Seaborn", "spaCy", "SAS", "MySQL", "Tableau", "Power BI",
+    "Python", "SAS", "SQL", "PySpark", "pandas", "NumPy",
+    "scikit-learn", "PyTorch", "Predictive Modeling", "Statistical Analysis",
+    "Customer Analytics", "Data Enrichment", "Segmentation",
   ],
-  ml: [
-    "Machine Learning", "Deep Learning", "Reinforcement Learning",
-    "NLP", "Anomaly Detection", "Statistical Data Analysis",
-    "SHAP / Model Explainability", "Social Computing",
+  ai: [
+    "AI Enablement", "Generative AI", "LLM Tooling", "Claude Code",
+    "Codex", "Prompt Iteration", "AI-assisted Development", "Workflow Automation",
   ],
-  vibeCoding: [
-    "Claude Code", "Next.js", "React", "TypeScript",
-    "Tailwind CSS", "Vercel", "Node.js", "JavaScript",
+  business: [
+    "Business-Tech Translation", "Decision Support", "Stakeholder Recommendations",
+    "Process Optimization", "Dashboarding", "Power BI", "Recharts", "Seaborn",
   ],
-  tools: [
-    "Git", "HTML/CSS/SASS", "Java", "Excel / PowerPoint",
-    "Adobe Photoshop", "Empirical Research", "Web Scraping",
+  engineering: [
+    "JavaScript", "TypeScript", "Node.js", "React", "Next.js",
+    "Tailwind CSS", "Git", "Vercel", "Cloudflare", "Render",
+    "MySQL", "MongoDB", "SQLite", "AWS",
   ],
 };
 
 export const workExperience = [
   {
-    title: "Data Scientist/Data Analyst",
+    title: "Data Analyst",
     company: "Acxiom Deutschland GmbH",
-    period: "Feb 2022 – Present",
+    period: "Feb. 2022 – Present",
     location: "Munich, Germany",
     description:
-      "Build predictive models from customer data, including logistic-model based address selection strategies, to improve campaign targeting and marketing effectiveness. Deliver customer structure analysis and data enrichment workflows using SAS and Python, support the transition of analytical workflows toward PySpark-based solutions, and turn findings into clear recommendations for clients and internal stakeholders.",
+      "Translate client marketing and customer-data questions into scalable analytics workflows and decision-ready recommendations. Build logistic-model based address selection strategies, develop SAS/Python customer structure and data enrichment workflows, support modernization toward PySpark-based processing, and contribute to AI-assisted development adoption through coding agents and workflow automation.",
   },
   {
-    title: "Machine Learning Research — Master Thesis",
+    title: "Master Thesis Student in Machine Learning",
     company: "Siemens AG",
-    period: "Jun 2021 – Jan 2022",
+    period: "Jun. 2021 – Jan. 2022",
     location: "Munich, Germany",
     description:
-      "Built an anomaly detection pipeline for CT scanner log data, combining supervised and unsupervised methods. Used SHAP-based explainability to turn model outputs into insights that supported predictive maintenance.",
+      "Developed explainable anomaly detection for CT scanner log data in an industrial healthcare setting. Built supervised and unsupervised ML models, used SHAP explainability to translate model behavior for business and technical stakeholders, and connected results to predictive-maintenance and after-sales service thinking.",
   },
   {
-    title: "Working Student — Data Science, Sales Operations",
+    title: "Working Student Data Scientist",
     company: "Fujitsu Enabling Software Technology GmbH",
-    period: "Nov 2019 – Dec 2021",
+    period: "Nov. 2019 – Dec. 2021",
     location: "Munich, Germany",
     description:
-      "Maintained and enriched CRM data, built visualizations with Python tools, and delivered dashboards that gave the sales team clearer visibility into pipeline performance and conversion trends.",
+      "Managed and enriched customer and sales datasets for reporting quality and sales-operations decision support.",
   },
 ];
 
 export const education = [
   {
     degree: "M.Sc. Information Systems",
-    institution: "Technical University of Munich (TUM)",
-    period: "Oct 2018 – Jan 2022",
+    institution: "Technical University of Munich",
+    period: "Oct. 2018 – Jan. 2022",
     location: "Munich, Germany",
     description:
-      "Focused on machine learning, business analytics, and database systems, with a thesis on industrial anomaly detection completed in collaboration with Siemens.",
+      "Focused on machine learning, business analytics, and database systems, with a thesis on industrial anomaly detection in collaboration with Siemens.",
   },
   {
     degree: "B.Sc. Information Systems",
     institution: "Communication University of China",
-    period: "Sep 2014 – Jul 2018",
+    period: "Sep. 2014 – Jul. 2018",
     location: "Beijing, China",
     description:
-      "Built a strong foundation in data management, information systems, and applied analytics.",
+      "Built a foundation in data management, information systems, and applied analytics.",
   },
 ];
 
 export const projects = {
   data: [
     {
-      title: "CT Scanner Anomaly Detection",
+      title: "Explainable CT Scanner Anomaly Detection",
       description:
-        "ML-based anomaly detection on log data from Siemens CT scanner machines. Combined supervised and unsupervised algorithms with SHAP-based model explainability to improve predictive maintenance and after-sale service.",
-      tags: ["Python", "PyTorch", "Scikit-learn", "SHAP", "Anomaly Detection"],
+        "Built an anomaly detection pipeline for CT scanner log data and used SHAP explainability to turn model behavior into predictive-maintenance insights.",
+      tags: ["Python", "PyTorch", "scikit-learn", "SHAP"],
       link: "#",
       github: "#",
       image: "",
     },
     {
-      title: "Marketing Model & Address Selection",
+      title: "Customer Selection & Marketing Optimization",
       description:
-        "Logistic regression–based customer data model for direct marketing strategy optimization at Acxiom. Included customer structure analysis and data enrichment using SAS and Python.",
-      tags: ["Python", "SAS", "Logistic Regression", "Pandas", "Tableau"],
+        "Developed logistic-regression based customer selection logic and data enrichment workflows for scalable direct-marketing optimization.",
+      tags: ["Python", "SAS", "Logistic Regression"],
       link: "#",
       github: "#",
       image: "",
@@ -121,46 +122,28 @@ export const projects = {
   ],
   vibeCoding: [
     {
-      title: "Aurora",
+      title: "Research Intelligence Platform",
       description:
-        "Real-time aurora borealis tracker with an interactive 3D globe. Pulls live data from NOAA SWPC every 30 minutes, ranks the top 10 viewing sites by aurora intensity, shows cloud cover and a 48-hour Kp forecast, and detects your location via IP to assess visibility from where you are.",
-      tags: ["Next.js", "Three.js", "GLSL", "TypeScript", "NOAA SWPC", "Tailwind CSS"],
-      link: "https://globe-aurora-live.vercel.app",
-      github: "https://github.com/jz-tian/globe_aurora",
-      image: "/projects/aurora-demo.gif",
-    },
-    {
-      title: "落書き Rakugaki",
-      description:
-        "AI-powered drawing game with a Japanese washi-paper aesthetic. Gemini 2.5 Flash generates a random prompt, you draw it in 120 seconds, then Gemini Vision scores your work and writes a humorous comment. Features three brush styles, flood fill, undo/redo, a gallery with JPG export, and full EN/中文 localisation.",
-      tags: ["Next.js", "TypeScript", "Gemini API", "Canvas API", "Tailwind CSS"],
-      link: "#",
-      github: "https://github.com/jz-tian/rakugaki",
-      image: "/projects/rakugaki-demo.gif",
-    },
-    {
-      title: "Trend Intelligence Dashboard",
-      description:
-        "Full-stack keyword trend dashboard surfacing Google Trends, news, YouTube results, sentiment analysis, and a word cloud from a single search — no paid APIs. Built with Next.js and deployed on Vercel.",
-      tags: ["Next.js", "TypeScript", "Recharts", "Tailwind CSS", "Vercel"],
+        "Built a decision-support workflow that aggregates Google Trends, news, YouTube signals, sentiment analysis, and keyword visualization to accelerate trend discovery and topic research.",
+      tags: ["Next.js", "TypeScript", "Recharts", "Tailwind CSS"],
       link: "https://trendintel.vercel.app",
       github: "https://github.com/jz-tian/keyword_dashboard",
       image: "/projects/trendintel-preview.svg",
     },
     {
-      title: "Rabbit Garden",
+      title: "Aurora Visibility Tracker",
       description:
-        "A single-page interactive encyclopedia of rabbit breeds. Six breeds peek up from a botanical hero, each clickable to reveal a full profile — origin, temperament, stats, and three AI-generated photos in animated organic blob frames. Built with vanilla HTML/CSS/JS; all imagery generated with Google Imagen 4 and background-removed via a custom BFS flood-fill algorithm.",
-      tags: ["HTML/CSS/JS", "Google Imagen 4", "Node.js", "sharp", "SVG Animation"],
-      link: "https://rabbit-garden.vercel.app",
-      github: "https://github.com/jz-tian/rabbit_garden",
-      image: "/projects/rabbit-garden-demo.gif",
+        "Engineered a data-integration and decision-support application that combines NOAA SWPC aurora data, cloud cover, geolocation, and 48-hour Kp forecasts on an interactive 3D globe.",
+      tags: ["Next.js", "TypeScript", "Three.js", "GLSL"],
+      link: "https://globe-aurora-live.vercel.app",
+      github: "https://github.com/jz-tian/globe_aurora",
+      image: "/projects/aurora-demo.gif",
     },
     {
-      title: "RabattHunter",
+      title: "RabattHunter Retail Automation Product",
       description:
-        "Live German supermarket discount tracker aggregating weekly deals from ALDI, Lidl, NORMA, EDEKA, and Denns BioMarkt. Features real-time scraping from official retailer APIs, auto-categorisation, full-text search, and a persistent shopping list with CSV export. Designed in a Japanese Shōwa-era (昭和) aesthetic — washi textures, hanko stamp accents, and Noto Serif JP typography — generated from a single Claude Design prompt.",
-      tags: ["Next.js", "React 19", "Turso", "SQLite", "Claude Design", "Vercel"],
+        "Developed an end-to-end retail promotions product for major German supermarket chains with automated data ingestion, product categorization, full-text search, and shopping-list export.",
+      tags: ["Next.js", "React 19", "Turso", "SQLite"],
       link: "https://rabatt-hunter.vercel.app",
       github: "https://github.com/jz-tian/prospekt_hunter",
       image: "/projects/rabatthunter-demo.gif",
