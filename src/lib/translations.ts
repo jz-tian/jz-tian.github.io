@@ -102,7 +102,7 @@ export const translations: Record<Lang, T> = {
     },
     hero: {
       eyebrow: "Business · Data · Automation · AI",
-      title: "Data Analyst | AI & Data Transformation",
+      title: "Senior Data Analyst | AI & Data Transformation",
       location: "Passau, Germany",
       badge: "Open to new connections",
       tagline:
@@ -155,7 +155,7 @@ export const translations: Record<Lang, T> = {
       title: "Professional Experience",
       items: [
         {
-          title: "Data Analyst",
+          title: "Senior Data Analyst",
           period: "Feb. 2022 – Present",
           location: "Munich, Germany",
           description:
@@ -291,7 +291,7 @@ export const translations: Record<Lang, T> = {
     },
     hero: {
       eyebrow: "Business · Daten · Automatisierung · KI",
-      title: "Data Analyst | AI & Data Transformation",
+      title: "Senior Data Analyst | AI & Data Transformation",
       location: "Passau, Deutschland",
       badge: "Offen für neue Kontakte",
       tagline:
@@ -344,7 +344,7 @@ export const translations: Record<Lang, T> = {
       title: "Berufliche Erfahrung",
       items: [
         {
-          title: "Data Analyst",
+          title: "Senior Data Analyst",
           period: "Feb. 2022 – heute",
           location: "München, Deutschland",
           description:

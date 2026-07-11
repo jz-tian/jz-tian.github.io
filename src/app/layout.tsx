@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Jiazheng Tian — Data Analyst | AI & Data Transformation",
+  title: "Jiazheng Tian — Senior Data Analyst | AI & Data Transformation",
   description:
     "Personal portfolio of Jiazheng Tian — AI and data transformation professional focused on analytics workflows, decision support, and AI-enabled ways of working.",
 };

@@ -5,7 +5,7 @@
 export const personal = {
   name: "Jiazheng Tian",
   initials: "JT",
-  title: "Data Analyst | AI & Data Transformation",
+  title: "Senior Data Analyst | AI & Data Transformation",
   tagline:
     "I translate business questions into scalable analytics workflows, decision-support outputs, and AI-enabled ways of working.",
   email: "jiazheng.tian@outlook.com",
@@ -55,7 +55,7 @@ export const skills = {
 
 export const workExperience = [
   {
-    title: "Data Analyst",
+    title: "Senior Data Analyst",
     company: "Acxiom Deutschland GmbH",
     period: "Feb. 2022 – Present",
     location: "Munich, Germany",
